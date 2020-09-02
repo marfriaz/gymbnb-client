@@ -7,11 +7,12 @@ import GymApiService from "../../services/gym-api-service";
 import { Section } from "../../components/Utils/Utils";
 import GymGridItem from "../../components/GymGridItem/GymGridItem";
 
-export default class ArticleListPage extends Component {
+export default class GymGrid extends Component {
   static contextType = GymListContext;
 
   componentDidMount() {
     this.context.clearError();
+    // this.context.setGymList(GymApiService.getGyms());
     GymApiService.getGyms()
       .then(this.context.setGymList)
       .catch(this.context.setError);
@@ -36,7 +37,7 @@ export default class ArticleListPage extends Component {
           )}
         </Section>
         <Link to={`/gyms`} className="GymGridExploreButton">
-          <button type="Submit">Explore {} more</button>
+          <button type="Submit">Explore {26} more</button>
         </Link>
       </>
     );

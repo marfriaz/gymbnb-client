@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import GymListContext from "../../contexts/GymListContext";
 // import "./SearchBox.css";
 
 class SearchBox extends Component {
@@ -9,17 +10,29 @@ class SearchBox extends Component {
     },
   };
 
+  static contextType = GymListContext;
+
   handleSubmit = (e) => {
-    e.preventDefault();
-    const { history } = this.props;
-    history.push("/gyms");
+    // e.preventDefault();
+    this.props.handleSearchSubmit(e);
+    this.updateSearchOption(e);
+  };
+
+  updateSearchOption = (gymLocation) => {
+    this.context.setLocation(gymLocation);
   };
 
   render() {
     return (
-      <form className="SearchBox" onSubmit={this.handleSubmit}>
-        <label htmlFor="search-box">Search:</label>
-        <select type="text" name="search-box" id="search-box">
+      <form
+        className="SearchBox"
+        onSubmit={(e) => {
+          e.preventDefault();
+          this.handleSubmit(e.target.searchBox.value);
+        }}
+      >
+        <label htmlFor="searchBox">Search:</label>
+        <select type="text" name="searchBox" id="searchBox">
           <option value="all">All Cities</option>
           <option value="san-francisco">San Francisco</option>
           <option value="los-angeles">Los Angeles</option>

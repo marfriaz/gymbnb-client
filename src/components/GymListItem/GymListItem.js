@@ -14,12 +14,12 @@ export default class GymListItem extends Component {
           <h2 className="GymListItem__location">{gym.location}</h2>
         </header>
         <GymPhotos gym={gym} />
-        <h2>{gym.location}</h2>
       </Link>
     );
   }
 }
 
+// MINI GRID OF PHOTOS?????
 function GymPhotos({ gym }) {
   return (
     <img

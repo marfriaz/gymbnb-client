@@ -10,7 +10,9 @@ class SearchBar extends Component {
           <h1>Book a local home gym</h1>
         </div>
         <div className="SearchBar__controls">
-          <SearchBox />
+          <SearchBox
+            handleSearchSubmit={(event) => this.props.handleSearchSubmit(event)}
+          />
         </div>
       </div>
     );

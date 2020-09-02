@@ -30,12 +30,15 @@ class App extends Component {
           {this.state.hasError && (
             <p className="red">There was an error! Oh no!</p>
           )}
+
           <Switch>
             <Route exact path={"/"} component={GymSearchPage} />
             <Route path={"/login"} component={LoginPage} />
             <Route path={"/signup"} component={SignUpPage} />
             <Route path={"/hostgym"} component={HostGymPage} />
+            <Route path={"/gyms/:location"} component={GymListPage} />
             <Route path={"/gym/:gymId"} component={GymPage} />
+            {/* should i change this to gyms???????? */}
             <Route path={"/gyms"} component={GymListPage} />
             <Route component={NotFoundPage} />
           </Switch>

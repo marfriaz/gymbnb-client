@@ -12,10 +12,17 @@ export default class GymSearchPage extends Component {
 
   componentDidMount() {
     this.context.clearError();
+    // this.context.setGymList(GymApiService.getGyms());
+
     GymApiService.getGyms()
       .then(this.context.setGymList)
       .catch(this.context.setError);
   }
+
+  handleSubmit = (e) => {
+    const { history } = this.props;
+    history.push(`/gyms/${this.context.location}`);
+  };
 
   renderGyms() {
     const { gymList = [] } = this.context;
@@ -26,7 +33,7 @@ export default class GymSearchPage extends Component {
     const { error } = this.context;
     return (
       <>
-        <SearchBar />
+        <SearchBar handleSearchSubmit={(event) => this.handleSubmit(event)} />
         <Section list className="GymGridPage">
           {error ? (
             <p className="red">There was an error, try again</p>

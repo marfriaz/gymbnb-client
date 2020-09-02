@@ -3,7 +3,7 @@ import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
 import { Section } from "../../components/Utils/Utils";
 
-export default class ArticlePage extends Component {
+export default class GymPage extends Component {
   static defaultProps = {
     match: { params: {} },
   };

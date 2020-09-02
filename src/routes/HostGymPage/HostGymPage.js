@@ -9,9 +9,9 @@ export default class CommentForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { article } = this.context;
+    const { location, price, title, description, imgURLOne } = this.context.gym;
     const { text } = ev.target;
-    GymApiService.postComment(article.id, text.value)
+    GymApiService.postGym(location, price, title, description, imgURLOne)
       .then(this.context.addComment)
       .then(() => {
         text.value = "";
