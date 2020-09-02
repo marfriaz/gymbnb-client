@@ -4,26 +4,8 @@ import GymApiService from "../../services/gym-api-service";
 import { Section } from "../../components/Utils/Utils";
 
 export default class GymPage extends Component {
-  static defaultProps = {
-    match: { params: {} },
-  };
-
-  static contextType = GymContext;
-
-  componentDidMount() {
-    const { gymId } = this.props.match.params;
-    this.context.clearError();
-    GymApiService.getGym(gymId)
-      .then(this.context.setGym)
-      .catch(this.context.setError);
-  }
-
-  componentWillUnmount() {
-    this.context.clearGym();
-  }
-
   renderGym() {
-    const { gym } = this.context;
+    const { gym } = this.props;
     return (
       <>
         <h2>{gym.location}</h2>
@@ -36,7 +18,7 @@ export default class GymPage extends Component {
   }
 
   render() {
-    const { error, gym } = this.context;
+    const { error, gym } = this.props;
     let content;
     if (error) {
       content =
@@ -50,7 +32,7 @@ export default class GymPage extends Component {
     } else {
       content = this.renderGym();
     }
-    return <Section className="ArticlePage">{content}</Section>;
+    return <Section className="GymPage">{content}</Section>;
   }
 }
 

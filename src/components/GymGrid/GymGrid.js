@@ -6,26 +6,17 @@ import GymListContext from "../../contexts/GymListContext";
 import GymApiService from "../../services/gym-api-service";
 import { Section } from "../../components/Utils/Utils";
 import GymGridItem from "../../components/GymGridItem/GymGridItem";
+import dummyStore from "../dummy-store";
 
 export default class GymGrid extends Component {
-  static contextType = GymListContext;
-
-  componentDidMount() {
-    this.context.clearError();
-    // this.context.setGymList(GymApiService.getGyms());
-    GymApiService.getGyms()
-      .then(this.context.setGymList)
-      .catch(this.context.setError);
-  }
-
   renderGyms() {
-    const { gymList = [] } = this.context;
+    const { gymList = [] } = this.props;
     // const gymListCount = gymList.count();
-    return gymList.map((gym) => <GymGridItem key={gym.id} gym={gym} />);
+    return gymList.map((gym) => <GymGridItem gym={gym} />);
   }
 
   render() {
-    const { error } = this.context;
+    const { error } = this.props;
     return (
       <>
         <h2>Available Gyms around the World</h2>

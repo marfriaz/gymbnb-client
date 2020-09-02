@@ -10,36 +10,71 @@ import HostGymPage from "../../routes/HostGymPage/HostGymPage";
 import SignUpPage from "../../routes/SignUpPage/SignUpPage";
 import NotFoundPage from "../../routes/NotFoundPage/NotFoundPage";
 import GymListPage from "../../routes/GymListPage/GymListPage";
+import dummyStore from "../dummy-store";
 // import "./App.css";
 
 class App extends Component {
-  state = { hasError: false };
+  state = { ...dummyStore, error: false };
 
   static getDerivedStateFromError(error) {
     console.error(error);
-    return { hasError: true };
+    return { error: true };
   }
 
   render() {
+    const { gymList, error } = this.state;
     return (
       <div className="App">
         <header className="App__header">
           <Header />
         </header>
         <main className="App__main">
-          {this.state.hasError && (
+          {this.state.error && (
             <p className="red">There was an error! Oh no!</p>
           )}
 
           <Switch>
-            <Route exact path={"/"} component={GymSearchPage} />
+            <Route
+              exact
+              path={"/"}
+              render={(routeProps) => (
+                <GymSearchPage
+                  gymList={gymList}
+                  error={error}
+                  {...routeProps}
+                />
+              )}
+            />
             <Route path={"/login"} component={LoginPage} />
             <Route path={"/signup"} component={SignUpPage} />
             <Route path={"/hostgym"} component={HostGymPage} />
-            <Route path={"/gyms/:location"} component={GymListPage} />
-            <Route path={"/gym/:gymId"} component={GymPage} />
-            {/* should i change this to gyms???????? */}
-            <Route path={"/gyms"} component={GymListPage} />
+            <Route
+              path={"/gyms/location/:gymLocation"}
+              render={(routeProps) => {
+                const { gymLocation } = routeProps.match.params;
+                const gyms = findGymByLocation(gymList, gymLocation) || {};
+                console.log(gymLocation, 1233);
+
+                return <GymListPage gymList={gyms} {...routeProps} />;
+              }}
+            />
+            <Route
+              path={"/gyms/:gymId"}
+              render={(routeProps) => {
+                const { gymId } = routeProps.match.params;
+                const gym = findGym(gymList, gymId) || {};
+                console.log(gymId, 123);
+                return <GymPage {...routeProps} error={error} gym={gym} />;
+              }}
+            />
+
+            {/* should i change this to gym???????? */}
+            <Route
+              path={"/gyms"}
+              render={(routeProps) => (
+                <GymListPage gymList={gymList} error={error} {...routeProps} />
+              )}
+            />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
@@ -49,3 +84,8 @@ class App extends Component {
 }
 
 export default App;
+
+const findGym = (gymList = [], gymId) => gymList.find((gym) => gym.id == gymId);
+
+const findGymByLocation = (gymList = [], gymLocation) =>
+  gymList.filter((gym) => gym.location === gymLocation);
