@@ -37,6 +37,7 @@ class SearchBox extends Component {
           <option value="san-francisco">San Francisco</option>
           <option value="los-angeles">Los Angeles</option>
           <option value="san-diego">San Diego</option>
+          <option value="new-york">New York</option>
         </select>
         <button type="submit">Search</button>
       </form>

@@ -9,7 +9,7 @@ export default class GymPage extends Component {
     return (
       <>
         <h2>{gym.location}</h2>
-        <p>{gym.imgURLOne}</p>
+        <GymPhotos gym={gym} />
         <h2>{gym.title}</h2>
         <GymDescription gym={gym} />
         {gym.price}
@@ -38,4 +38,14 @@ export default class GymPage extends Component {
 
 function GymDescription({ gym }) {
   return <p className="GymPage__description">{gym.description}</p>;
+}
+
+function GymPhotos({ gym }) {
+  return (
+    <img
+      className="GymGridItem__photo"
+      src={gym.imgURLOne}
+      alt="Home Gym Listing Photo"
+    />
+  );
 }
