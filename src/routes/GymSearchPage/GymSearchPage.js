@@ -4,8 +4,21 @@ import GymGrid from "../../components/GymGrid/GymGrid";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default class GymSearchPage extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
   handleSubmit = (e) => {
-    console.log("submitted!");
+    console.log("submitted");
+
+    const { history } = this.props;
+    if (e == "all") {
+      history.push("/gyms");
+    } else {
+      history.push(``);
+      history.push(`gyms/location/${e}`);
+    }
   };
 
   renderGyms() {
