@@ -8,7 +8,7 @@ export default class GymListItem extends Component {
   render() {
     const { gym } = this.props;
     return (
-      <Link to={`/gyms/${gym.gymId}`} className="GymListItem">
+      <Link to={`/gyms/${gym.id}`} className="GymListItem">
         <header className="GymListItem__header">
           <h2 className="GymListItem__title">{gym.title}</h2>
           <h2 className="GymListItem__location">{gym.location}</h2>
