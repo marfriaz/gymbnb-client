@@ -33,7 +33,7 @@ export class GymProvider extends Component {
   };
 
   clearGym = () => {
-    this.setArticle(nullGym);
+    this.setGym(nullGym);
   };
 
   render() {

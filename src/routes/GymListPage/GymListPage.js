@@ -24,7 +24,7 @@ export default class GymListPage extends Component {
 
   renderGyms() {
     const { gymList = [] } = this.props;
-    return gymList.map((gym) => <GymListItem key={gym.id} gym={gym} />);
+    return gymList.map((gym) => <GymListItem gym={gym} />);
   }
 
   render() {
