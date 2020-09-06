@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
-export const nullGym = {};
-
 const GymContext = React.createContext({
-  gym: nullGym,
+  gym: {},
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -15,7 +13,7 @@ export default GymContext;
 
 export class GymProvider extends Component {
   state = {
-    gym: nullGym,
+    gym: {},
     error: null,
   };
 
@@ -33,7 +31,7 @@ export class GymProvider extends Component {
   };
 
   clearGym = () => {
-    this.setArticle(nullGym);
+    this.setGym({});
   };
 
   render() {

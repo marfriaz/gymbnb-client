@@ -22,13 +22,13 @@ export class GymListProvider extends Component {
 
   setGymList = (gymList) => {
     this.setState({ gymList });
-    this.setGymCount(gymList);
+    // this.setGymCount(gymList);
   };
 
-  setGymCount = (gymList) => {
-    const count = gymList.length;
-    this.setState.gymListCount({ count });
-  };
+  // setGymCount = (gymList) => {
+  //   const count = gymList.length;
+  //   this.setState.gymListCount({ count });
+  // };
 
   setLocation = (gymLocation) => {
     this.setState({ location: `${gymLocation}` });
@@ -53,7 +53,7 @@ export class GymListProvider extends Component {
       clearError: this.clearError,
       setGymList: this.setGymList,
       setLocation: this.setLocation,
-      setGymCount: this.setGymCount,
+      // setGymCount: this.setGymCount,
     };
     return (
       <GymListContext.Provider value={value}>

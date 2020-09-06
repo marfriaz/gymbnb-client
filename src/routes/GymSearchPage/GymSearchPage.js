@@ -8,12 +8,16 @@ import GymGrid from "../../components/GymGrid/GymGrid";
 import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default class GymSearchPage extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
+
   static contextType = GymListContext;
 
   componentDidMount() {
     this.context.clearError();
-    // this.context.setGymList(GymApiService.getGyms());
-
     GymApiService.getGyms()
       .then(this.context.setGymList)
       .catch(this.context.setError);
@@ -21,12 +25,17 @@ export default class GymSearchPage extends Component {
 
   handleSubmit = (e) => {
     const { history } = this.props;
-    history.push(`/gyms/${this.context.location}`);
+    const gymLocation = this.context.location;
+    if (gymLocation == "all") {
+      history.push("/gyms");
+    } else {
+      history.push(`gyms/location/${gymLocation}`);
+    }
   };
 
   renderGyms() {
     const { gymList = [] } = this.context;
-    return gymList.map((gym) => <GymGrid key={gym.id} gym={gym} />);
+    return <GymGrid gymList={gymList} />;
   }
 
   render() {
@@ -41,7 +50,6 @@ export default class GymSearchPage extends Component {
             this.renderGyms()
           )}
         </Section>
-        <GymGrid />
       </>
     );
   }

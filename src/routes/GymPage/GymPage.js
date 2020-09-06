@@ -11,8 +11,9 @@ export default class GymPage extends Component {
   static contextType = GymContext;
 
   componentDidMount() {
-    const { gymId } = this.props.match.params;
     this.context.clearError();
+    const { gymId } = this.props.match.params;
+
     GymApiService.getGym(gymId)
       .then(this.context.setGym)
       .catch(this.context.setError);
@@ -27,7 +28,7 @@ export default class GymPage extends Component {
     return (
       <>
         <h2>{gym.location}</h2>
-        <p>{gym.imgURLOne}</p>
+        <GymPhotos gym={gym} />
         <h2>{gym.title}</h2>
         <GymDescription gym={gym} />
         {gym.price}
@@ -56,4 +57,14 @@ export default class GymPage extends Component {
 
 function GymDescription({ gym }) {
   return <p className="GymPage__description">{gym.description}</p>;
+}
+
+function GymPhotos({ gym }) {
+  return (
+    <img
+      className="GymGridItem__photo"
+      src={gym.img_url_one}
+      alt="Home Gym Listing Photo"
+    />
+  );
 }

@@ -10,14 +10,6 @@ import GymGridItem from "../../components/GymGridItem/GymGridItem";
 export default class GymGrid extends Component {
   static contextType = GymListContext;
 
-  componentDidMount() {
-    this.context.clearError();
-    // this.context.setGymList(GymApiService.getGyms());
-    GymApiService.getGyms()
-      .then(this.context.setGymList)
-      .catch(this.context.setError);
-  }
-
   renderGyms() {
     const { gymList = [] } = this.context;
     // const gymListCount = gymList.count();

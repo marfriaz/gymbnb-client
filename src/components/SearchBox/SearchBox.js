@@ -27,6 +27,7 @@ class SearchBox extends Component {
       <form
         className="SearchBox"
         onSubmit={(e) => {
+          // const location = e.target.searchBox.value;
           e.preventDefault();
           this.handleSubmit(e.target.searchBox.value);
         }}
@@ -37,6 +38,7 @@ class SearchBox extends Component {
           <option value="san-francisco">San Francisco</option>
           <option value="los-angeles">Los Angeles</option>
           <option value="san-diego">San Diego</option>
+          <option value="new-york">New York</option>
         </select>
         <button type="submit">Search</button>
       </form>

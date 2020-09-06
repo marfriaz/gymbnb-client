@@ -16,23 +16,28 @@ export default class GymListPage extends Component {
   static contextType = GymListContext;
 
   componentDidMount() {
-    // this.context.clearError();
-    // this.context.setGymList(GymApiService.getGyms());
-
-    // const { location } = this.context;
-    // if (location == "san-francisco" || "los-angeles" || "san-diego") {
-    //   GymApiService.getGymbyLocation(location)
-    //     .then(this.context.setGymList)
-    //     .catch(this.context.setError);
-    // } else
-    GymApiService.getGyms()
-      .then(this.context.setGymList)
-      .catch(this.context.setError);
+    const gymLocation = this.context.location;
+    this.context.clearError();
+    if (gymLocation == "all" || "") {
+      GymApiService.getGyms()
+        .then(this.context.setGymList)
+        .catch(this.context.setError);
+    } else {
+      GymApiService.getGymsByLocation(gymLocation)
+        .then(this.context.setGymList)
+        .catch(this.context.setError);
+    }
   }
 
   handleSubmit = (e) => {
     const { history } = this.props;
-    history.push(`/gyms/${this.context.location}`);
+    const gymLocation = this.context.location;
+    if (gymLocation == "all") {
+      history.push("/gyms");
+    } else {
+      history.push(``);
+      history.push(`gyms/location/${gymLocation}`);
+    }
   };
 
   renderGyms() {

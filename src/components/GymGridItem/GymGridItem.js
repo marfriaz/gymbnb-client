@@ -8,7 +8,7 @@ export default class GymGridItem extends Component {
   render() {
     const { gym } = this.props;
     return (
-      <Link to={`/gym/${gym.id}`} className="GymListItem">
+      <Link to={`/gyms/${gym.id}`} className="GymListItem">
         <GymPhotos gym={gym} />
         <h2>{gym.location}</h2>
       </Link>
@@ -20,7 +20,7 @@ function GymPhotos({ gym }) {
   return (
     <img
       className="GymGridItem__photo"
-      src={gym.imgURLOne}
+      src={gym.img_url_one}
       alt="Home Gym Listing Photo"
     />
   );

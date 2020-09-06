@@ -36,9 +36,11 @@ class App extends Component {
             <Route path={"/login"} component={LoginPage} />
             <Route path={"/signup"} component={SignUpPage} />
             <Route path={"/hostgym"} component={HostGymPage} />
-            <Route path={"/gyms/:location"} component={GymListPage} />
-            <Route path={"/gym/:gymId"} component={GymPage} />
-            {/* should i change this to gyms???????? */}
+            <Route
+              path={"/gyms/location/:gymLocation"}
+              component={GymListPage}
+            />
+            <Route path={"/gyms/:gymId"} component={GymPage} />
             <Route path={"/gyms"} component={GymListPage} />
             <Route component={NotFoundPage} />
           </Switch>
