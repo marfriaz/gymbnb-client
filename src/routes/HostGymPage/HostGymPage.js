@@ -1,29 +1,41 @@
 import React, { Component } from "react";
 import GymContext from "../../contexts/GymContext";
-import GymApiService from "../../services/gym-api-service";
 import Description from "../../components/Description/Description";
 import HostGymForm from "../../components/HostGymForm/HostGymForm";
 
 export default class CommentForm extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
   static contextType = GymContext;
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { location, price, title, description, imgURLOne } = this.context.gym;
-    const { text } = ev.target;
-    GymApiService.postGym(location, price, title, description, imgURLOne)
-      .then(this.context.addComment)
-      .then(() => {
-        text.value = "";
-      })
-      .catch(this.context.setError);
+    console.log(this.context.gym.id);
+    this.props.history.push(`/gyms/${this.context.gym.id}`);
   };
+  //   const {
+  //     location,
+  //     price,
+  //     title,
+  //     description,
+  //     img_url_one,
+  //   } = this.context.gym;
+  //   const { text } = ev.target;
+  //   GymApiService.postGym(location, price, title, description, img_url_one)
+  //     .then(() => {
+  //       text.value = "";
+  //     })
+  //     .catch(this.context.setError);
+  // };
 
   render() {
     return (
       <>
         <Description />
-        <HostGymForm />
+        <HostGymForm handleCreateSubmit={(event) => this.handleSubmit(event)} />
       </>
     );
   }

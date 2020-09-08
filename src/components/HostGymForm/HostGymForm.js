@@ -10,23 +10,35 @@ export default class HostGymForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { location, price, title, description, imgURLOne } = ev.target;
 
     this.setState({ error: null });
     GymApiService.postGym({
-      location: location.value,
-      price: price.value,
-      title: title.value,
-      description: description.value,
-      imgURLOne: imgURLOne.value,
+      location: ev.target.location.value,
+      price: ev.target.price.value,
+      title: ev.target.title.value,
+      guests: ev.target.guests.value,
+      description: ev.target.description.value,
+      img_url_one: ev.target.img_url_one.value,
+      img_url_two: ev.target.img_url_two.value,
+      img_url_three: ev.target.img_url_three.value,
+      img_url_four: ev.target.img_url_four.value,
+      img_url_five: ev.target.img_url_five.value,
     })
-      .then((user) => {
-        location.value = "";
-        price.value = "";
-        title.value = "";
-        description.value = "";
-        imgURLOne.value = "";
+      // .then(() => {
+      //   location.value = "";
+      //   price.value = "";
+      //   title.value = "";
+      //   description.value = "";
+      //   img_url_one.value = "";
+      // })
+
+      .then((data) => {
+        console.log("from api", data);
+        this.context.setGym(data);
+        // this.props.history.push(`/gyms/${gym.id}`);
       })
+      .then(console.log("from context", this.context.gym))
+      .then(this.props.handleCreateSubmit(ev))
       .catch((res) => {
         this.setState({ error: res.error });
       });
@@ -34,6 +46,8 @@ export default class HostGymForm extends Component {
 
   render() {
     const { error } = this.state;
+    // console.log(this.props);
+
     return (
       <form className="HostGymForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
@@ -70,6 +84,18 @@ export default class HostGymForm extends Component {
             id="HostGymForm__title"
           ></Input>
         </div>
+        <div className="guests">
+          <label htmlFor="HostGymForm__guests">
+            Guests <Required />
+          </label>
+          <Input
+            name="guests"
+            type="text"
+            required
+            id="HostGymForm__guests"
+          ></Input>
+        </div>
+
         <div className="description">
           <label htmlFor="HostGymForm__description">
             Description <Required />
@@ -81,15 +107,59 @@ export default class HostGymForm extends Component {
             id="HostGymForm__description"
           ></Input>
         </div>
-        <div className="imgURLOne">
-          <label htmlFor="HostGymForm__imgURLOne">
+        <div className="img_url_one">
+          <label htmlFor="HostGymForm__img_url_one">
             Upload Photos <Required />
           </label>
           <Input
-            name="imgURLOne"
+            name="img_url_one"
             type="text"
             required
-            id="HostGymForm__imgURLOne"
+            id="HostGymForm__img_url_one"
+          ></Input>
+        </div>
+        <div className="img_url_two">
+          <label htmlFor="HostGymForm__img_url_two">
+            Upload Photos <Required />
+          </label>
+          <Input
+            name="img_url_two"
+            type="text"
+            required
+            id="HostGymForm__img_url_two"
+          ></Input>
+        </div>
+        <div className="img_url_three">
+          <label htmlFor="HostGymForm__img_url_three">
+            Upload Photos <Required />
+          </label>
+          <Input
+            name="img_url_three"
+            type="text"
+            required
+            id="HostGymForm__img_url_three"
+          ></Input>
+        </div>
+        <div className="img_url_four">
+          <label htmlFor="HostGymForm__img_url_four">
+            Upload Photos <Required />
+          </label>
+          <Input
+            name="img_url_four"
+            type="text"
+            required
+            id="HostGymForm__img_url_four"
+          ></Input>
+        </div>
+        <div className="img_url_five">
+          <label htmlFor="HostGymForm__img_url_five">
+            Upload Photos <Required />
+          </label>
+          <Input
+            name="img_url_five"
+            type="text"
+            required
+            id="HostGymForm__img_url_five"
           ></Input>
         </div>
 

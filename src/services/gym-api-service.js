@@ -19,14 +19,14 @@ const GymApiService = {
   },
 
   getGymsByLocation(location) {
-    return fetch(`${config.API_ENDPOINT.endpoint}/gyms/location/${location}`, {
+    return fetch(`${config.API_ENDPOINT}/gyms/location/${location}`, {
       headers: {},
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
 
-  postGym(
+  postGym({
     title,
     user_id,
     description,
@@ -37,8 +37,8 @@ const GymApiService = {
     img_url_two,
     img_url_three,
     img_url_four,
-    img_url_five
-  ) {
+    img_url_five,
+  }) {
     return fetch(`${config.API_ENDPOINT}/gyms`, {
       method: "POST",
       headers: {

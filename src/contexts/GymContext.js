@@ -27,6 +27,7 @@ export class GymProvider extends Component {
   };
 
   setGym = (gym) => {
+    console.log(gym);
     this.setState({ gym });
   };
 

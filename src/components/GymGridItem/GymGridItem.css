@@ -1,0 +1,46 @@
+html,
+body {
+  margin: 0;
+}
+.GymGrid {
+  overflow: hidden;
+}
+/* 
+.GymListItem_div .GymGridItem__photo {
+  background: #000;
+  float: left;
+  height: 24vw;
+  margin: 1%;
+  width: 23%;
+} */
+
+/* .GymGrid {
+  margin: -1%;
+  padding: 20px;
+} */
+
+.GymListItem_div {
+  border: 10px solid lightgray;
+  border-radius: 30px;
+  margin: 1% 20% 0 20%;
+  padding-bottom: 1%;
+  /* margin: 50px 80px 50px 80px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  max-width: 90%;
+
+  display: flex;
+  height: 24vw;
+  margin: 1%;
+  width: 23%;
+}
+
+.GymGridItem__photo {
+  max-width: 80%;
+  max-height: 60%;
+  margin: auto;
+}

@@ -30,9 +30,9 @@ export class GymListProvider extends Component {
   //   this.setState.gymListCount({ count });
   // };
 
-  setLocation = (gymLocation) => {
-    this.setState({ location: `${gymLocation}` });
-  };
+  // setLocation = (gymLocation) => {
+  //   this.setState({ location: `${gymLocation}` });
+  // };
 
   setError = (error) => {
     console.error(error);

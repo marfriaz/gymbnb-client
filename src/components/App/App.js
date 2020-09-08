@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
-// import PrivateRoute from "../Utils/PrivateRoute";
-// import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
+import PrivateRoute from "../Utils/PrivateRoute";
+import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import GymSearchPage from "../../routes/GymSearchPage/GymSearchPage";
 import GymPage from "../../routes/GymPage/GymPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
@@ -10,7 +10,7 @@ import HostGymPage from "../../routes/HostGymPage/HostGymPage";
 import SignUpPage from "../../routes/SignUpPage/SignUpPage";
 import NotFoundPage from "../../routes/NotFoundPage/NotFoundPage";
 import GymListPage from "../../routes/GymListPage/GymListPage";
-// import "./App.css";
+import "./App.css";
 
 class App extends Component {
   state = { hasError: false };
@@ -33,9 +33,9 @@ class App extends Component {
 
           <Switch>
             <Route exact path={"/"} component={GymSearchPage} />
-            <Route path={"/login"} component={LoginPage} />
-            <Route path={"/signup"} component={SignUpPage} />
-            <Route path={"/hostgym"} component={HostGymPage} />
+            <PublicOnlyRoute path={"/login"} component={LoginPage} />
+            <PublicOnlyRoute path={"/signup"} component={SignUpPage} />
+            <PrivateRoute path={"/hostgym"} component={HostGymPage} />
             <Route
               path={"/gyms/location/:gymLocation"}
               component={GymListPage}

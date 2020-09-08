@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Hyph } from "../Utils/Utils";
 import TokenService from "../../services/token-service";
-// import "./Header.css";
+import "./Header.css";
 
 export default class Header extends Component {
   handleLogoutClick = () => {
@@ -13,8 +13,10 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
+        <Link to="/hostgym">Host a Gym</Link>
+        <Hyph />
         <Link onClick={this.handleLogoutClick} to="/">
-          Sign Out
+          Log Out
         </Link>
       </div>
     );
@@ -37,7 +39,8 @@ export default class Header extends Component {
       <nav className="Header">
         <h1>
           <Link to="/">
-            <FontAwesomeIcon className="green" icon="dumbbell" /> Gymbnb
+            <FontAwesomeIcon className="green" icon="dumbbell" />
+            Gymbnb
           </Link>
         </h1>
         {TokenService.hasAuthToken()

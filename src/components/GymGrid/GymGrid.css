@@ -1,0 +1,4 @@
+.GymListItems_contianer {
+  display: flex;
+  flex-direction: row;
+}

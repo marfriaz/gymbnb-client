@@ -1,17 +1,17 @@
-// from ArticleListItem
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "./ArticleListItem.css";
+import "./GymGridItem.css";
 
 export default class GymGridItem extends Component {
   render() {
     const { gym } = this.props;
     return (
-      <Link to={`/gyms/${gym.id}`} className="GymListItem">
-        <GymPhotos gym={gym} />
-        <h2>{gym.location}</h2>
-      </Link>
+      <div className="GymListItem_div">
+        <Link to={`/gyms/${gym.id}`} className="GymListItem">
+          <GymPhotos gym={gym} />
+          <h2>{gym.location}</h2>
+        </Link>
+      </div>
     );
   }
 }

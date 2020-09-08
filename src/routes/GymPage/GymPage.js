@@ -27,11 +27,14 @@ export default class GymPage extends Component {
     const { gym } = this.context;
     return (
       <>
-        <h2>{gym.location}</h2>
-        <GymPhotos gym={gym} />
-        <h2>{gym.title}</h2>
-        <GymDescription gym={gym} />
-        {gym.price}
+        <div className="Gym">
+          <GymPhotos gym={gym} />
+          <h2>{gym.location}</h2>
+          <h2>{gym.title}</h2>
+
+          {gym.price}
+          <GymDescription gym={gym} />
+        </div>
       </>
     );
   }
@@ -51,7 +54,7 @@ export default class GymPage extends Component {
     } else {
       content = this.renderGym();
     }
-    return <Section className="ArticlePage">{content}</Section>;
+    return <Section className="GymPage">{content}</Section>;
   }
 }
 

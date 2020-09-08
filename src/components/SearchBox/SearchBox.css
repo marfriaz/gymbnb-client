@@ -1,0 +1,58 @@
+.SearchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+
+.SearchBar__controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+
+.SearchBox_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 16px 16px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 16px 16px;
+  width: 600px;
+}
+
+.SearchBox_form {
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 80%;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+#searchBox {
+  height: 48px;
+  font-size: 17px;
+  font-weight: 800;
+  margin-left: 16px;
+  width: 30%;
+  background-color: transparent;
+  border: none;
+}
+
+.searchButton {
+  background-color: transparent;
+  border: none;
+}
+
+#searchIcon {
+  margin-left: 10px;
+}
