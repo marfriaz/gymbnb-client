@@ -5,24 +5,15 @@ body {
 .GymGrid {
   overflow: hidden;
 }
-/* 
-.GymListItem_div .GymGridItem__photo {
-  background: #000;
-  float: left;
-  height: 24vw;
-  margin: 1%;
-  width: 23%;
-} */
 
-/* .GymGrid {
-  margin: -1%;
-  padding: 20px;
-} */
+.GymGridItem_div {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  background: white;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
 
-.GymListItem_div {
-  border: 10px solid lightgray;
   border-radius: 30px;
-  margin: 1% 20% 0 20%;
+  /* margin: 1% 20% 0 20%; */
   padding-bottom: 1%;
   /* margin: 50px 80px 50px 80px; */
   display: flex;
@@ -35,12 +26,23 @@ body {
 
   display: flex;
   height: 24vw;
-  margin: 1%;
+  /* margin: 1%; */
   width: 23%;
 }
 
 .GymGridItem__photo {
-  max-width: 80%;
-  max-height: 60%;
-  margin: auto;
+  width: 100%;
+  max-height: 90%;
+  object-fit: cover;
+}
+.GymGridItem {
+  text-decoration: none;
+}
+
+.GymGridItem_location {
+  color: navy;
+  font-weight: bold;
+}
+
+@media (min-width: 650px) {
 }

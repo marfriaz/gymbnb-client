@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./Description.css";
 
 export default class Description extends Component {
   render() {
@@ -8,7 +9,7 @@ export default class Description extends Component {
         icon: <FontAwesomeIcon className="green" icon="dumbbell" />,
         title: "List your gym for free",
         description:
-          "Set your price, add photos and details, and we'll make your listing live and ready to be seen by millions of people looking for a quick relaxation.",
+          "Set your price, add photos and details, and we'll make your listing live and ready to be seen by millions of people looking for a quick pump.",
       },
       {
         icon: <FontAwesomeIcon className="green" icon="dumbbell" />,
@@ -24,7 +25,7 @@ export default class Description extends Component {
       },
     ];
     const list = content.map((item) => (
-      <div className="points">
+      <div className="Description_div">
         {item.icon}
         <h2>{item.title}</h2>
         <p>{item.description}</p>
@@ -32,9 +33,10 @@ export default class Description extends Component {
     ));
 
     return (
-      <section>
+      <section className="Description">
         <h2>How it Works</h2>
-        {list}
+        <div className="Description_container">{list}</div>
+        <h2>List a Gym</h2>
       </section>
     );
   }

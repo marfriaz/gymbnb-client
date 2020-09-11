@@ -6,10 +6,10 @@ export default class GymGridItem extends Component {
   render() {
     const { gym } = this.props;
     return (
-      <div className="GymListItem_div">
-        <Link to={`/gyms/${gym.id}`} className="GymListItem">
+      <div className="GymGridItem_div">
+        <Link to={`/gyms/${gym.id}`} className="GymGridItem">
           <GymPhotos gym={gym} />
-          <h2>{gym.location}</h2>
+          <div className="GymGridItem_location">{gym.location}</div>
         </Link>
       </div>
     );

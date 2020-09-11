@@ -1,18 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import "./ArticleListItem.css";
+import "./GymListItem.css";
 
 export default class GymListItem extends Component {
   render() {
     const { gym } = this.props;
     return (
-      <Link to={`/gyms/${gym.id}`} className="GymListItem">
-        <header className="GymListItem__header">
-          <h2 className="GymListItem__title">{gym.title}</h2>
-          <h2 className="GymListItem__location">{gym.location}</h2>
-        </header>
+      <div className="GymListItem">
         <GymPhotos gym={gym} />
-      </Link>
+        <div className="GymListItem__content">
+          <header className="GymListItem__header">
+            <h2 className="GymListItem__title">{gym.title}</h2>
+            <div className="GymListItem__location">{gym.location}</div>
+          </header>
+          <div>${gym.price} per hour</div>
+          <p>{gym.description}</p>
+          <Link to={`/gyms/${gym.id}`} className="GymListItem_link">
+            <button type="Submit" className="button">
+              See more details
+            </button>
+          </Link>
+        </div>
+      </div>
     );
   }
 }
@@ -20,10 +29,12 @@ export default class GymListItem extends Component {
 // MINI GRID OF PHOTOS?????
 function GymPhotos({ gym }) {
   return (
-    <img
-      className="GymGridItem__photo"
-      src={gym.img_url_one}
-      alt="Home Gym Listing Photo"
-    />
+    <div className="GymListItem__photo_container">
+      <img
+        className="GymListItem__photo"
+        src={gym.img_url_one}
+        alt="Home Gym Listing Photo"
+      />
+    </div>
   );
 }

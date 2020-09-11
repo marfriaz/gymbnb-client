@@ -1,0 +1,72 @@
+.GymList_ul {
+  list-style-type: none;
+}
+
+.GymListItem {
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+  background: white;
+  transition: all 0.3s ease;
+  /* height: 70px;
+  padding: 0px 30px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* width: "200px"; */
+  /* height: 40px;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between; */
+}
+
+.GymListItem__photo_container {
+  height: 30%;
+  margin: 1%;
+  width: 90%;
+  padding: 12px;
+}
+
+.GymListItem__photo {
+  width: 100%;
+  max-height: 90%;
+  object-fit: cover;
+}
+
+.GymListItem__content {
+  text-align: left;
+  padding: 12px;
+}
+
+/* .GymListItem__header {
+} */
+
+.GymListItem__title {
+  /* font-family: "Poppins", sans-serif; */
+  /* font-weight: 50; */
+  /* line-height: 1.1; */
+  margin-bottom: 4px;
+  margin-top: 1px;
+}
+
+.GymListItem__location {
+  color: #7b858b;
+}
+
+@media (min-width: 650px) {
+  .GymListItem {
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
+    background: white;
+    transition: all 0.3s ease;
+    flex-direction: row;
+    /* height: 70px;
+  padding: 0px 30px; */
+    display: flex;
+    align-items: row;
+    justify-content: space-between;
+    /* width: "200px"; */
+    /* height: 40px;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between; */
+  }
+}

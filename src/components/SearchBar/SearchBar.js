@@ -6,8 +6,8 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="SearchBar">
-        <div className="SearchBar__heading">
-          <h1>Book a local home gym</h1>
+        <div className="SearchBar__heading_div">
+          <div className="SearchBar__heading">Book a local home gym</div>
         </div>
         <div className="SearchBar__controls">
           <SearchBox

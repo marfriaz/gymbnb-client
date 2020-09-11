@@ -1,0 +1,23 @@
+.Description_container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.Description_div {
+  margin: 10px 5px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  flex: 1;
+}
+
+/* For screens 520px or less */
+@media screen and (max-width: 520px) {
+  .Description_container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -10,20 +10,19 @@ export default class GymGrid extends Component {
 
   renderGyms() {
     const { gymList = [] } = this.context;
-    // const gymListCount = gymList.count();
     const upToSix = gymList.slice(0, 6);
     return upToSix.map((gym) => <GymGridItem key={gym.id} gym={gym} />);
   }
 
   render() {
-    const { error } = this.context;
+    const { error, gymList } = this.context;
     return (
       <>
         <Section list className="GymGrid">
           <div className="GymGridHeader">
-            <h2>Available Gyms around the World</h2>
+            <h2>Available Gyms in California</h2>
           </div>
-          <div className="GymListItems_contianer">
+          <div className="GymGridItems_container">
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (
@@ -31,7 +30,9 @@ export default class GymGrid extends Component {
             )}
           </div>
           <Link to={`/gyms`} className="GymGridExploreButton">
-            <button type="Submit">Explore {26} more</button>
+            <button type="Submit" className="button">
+              Explore {gymList.length - 6} more
+            </button>
           </Link>
         </Section>
       </>

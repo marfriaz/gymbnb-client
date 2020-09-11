@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import GymListContext from "../../contexts/GymListContext";
 import "./SearchBox.css";
 
@@ -14,14 +15,8 @@ class SearchBox extends Component {
   static contextType = GymListContext;
 
   handleSubmit = (e) => {
-    // e.preventDefault();
-    // this.updateSearchOption(e);
     this.props.handleSearchSubmit(e);
   };
-
-  // updateSearchOption = (gymLocation) => {
-  //   this.context.setLocation(gymLocation);
-  // };
 
   render() {
     return (
@@ -29,7 +24,6 @@ class SearchBox extends Component {
         <form
           className="SearchBox_form"
           onSubmit={(e) => {
-            // const location = e.target.searchBox.value;
             e.preventDefault();
             this.handleSubmit(e.target.searchBox.value);
           }}
@@ -48,7 +42,7 @@ class SearchBox extends Component {
             <option value="san-diego">San Diego</option>
           </select>
           <button type="submit" className="searchButton">
-            <FontAwesomeIcon icon="search" id="searchIcon" />
+            <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
       </div>

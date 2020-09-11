@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
-import { Section } from "../../components/Utils/Utils";
+import { Section, Input, Required } from "../../components/Utils/Utils";
+import "./GymPage.css";
 
 export default class GymPage extends Component {
   static defaultProps = {
@@ -27,13 +28,78 @@ export default class GymPage extends Component {
     const { gym } = this.context;
     return (
       <>
-        <div className="Gym">
-          <GymPhotos gym={gym} />
-          <h2>{gym.location}</h2>
-          <h2>{gym.title}</h2>
+        <GymPhotos gym={gym} />
+        <div className="GymPage_content">
+          <div className="GymPage_details">
+            <div className="GymPage_title">{gym.title}</div>
+            <div className="GymPage_location">{gym.location}, CA</div>
+            <div>
+              <span className="GymPage_guests">{gym.guests}</span> max guests
+            </div>
+            <GymDescription gym={gym} />
+          </div>
+          <div className="GymPage_checkout">
+            <div className="GymPage_checkout_padding">
+              <div>
+                <span className="GymPage_price">${gym.price}</span> per hour
+              </div>
+              <div className="GymPage_date_and_time">
+                <div className="GymPage_date">
+                  <label htmlFor="GymPage_date">
+                    Date <Required />
+                  </label>
+                  <Input
+                    name="date"
+                    type="text"
+                    required
+                    id="GymPage_date"
+                  ></Input>
+                </div>
 
-          {gym.price}
-          <GymDescription gym={gym} />
+                <div className="GymPage_time">
+                  <label htmlFor="GymPage_time">
+                    Time <Required />
+                  </label>
+                  <Input
+                    name="date"
+                    type="text"
+                    required
+                    id="GymPage_time"
+                  ></Input>
+                </div>
+              </div>
+              <div>
+                <div className="GymPage_guests_input">
+                  <label htmlFor="GymPage_guests_input">
+                    Who will be coming?
+                  </label>
+
+                  <select
+                    type="text"
+                    name="searchBox"
+                    id="guestSelectBox"
+                    placeholder="Search"
+                  >
+                    <MaxGuests gym={gym} />
+                    {/* <option> {gym.guests}</option> */}
+                  </select>
+                </div>
+              </div>
+              <div>
+                <div>Payment Details</div>
+                <div>
+                  Once the host approves your request, you will be asked to
+                  confirm it. Only then will you be charged.
+                </div>
+              </div>
+
+              <div className="Purchase_button_div">
+                <button className="Purchase_button button">
+                  Complete Purchase
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );
@@ -64,10 +130,21 @@ function GymDescription({ gym }) {
 
 function GymPhotos({ gym }) {
   return (
-    <img
-      className="GymGridItem__photo"
-      src={gym.img_url_one}
-      alt="Home Gym Listing Photo"
-    />
+    <div className="GymPage__photo_container">
+      <img
+        className="GymPage__photo"
+        src={gym.img_url_one}
+        alt="Home Gym Listing Photo"
+      />
+    </div>
   );
+}
+
+function MaxGuests({ gym }) {
+  let gymArray = [];
+  for (var i = 0; i <= gym.guests; i++) {
+    gymArray.push(i);
+  }
+  const gymsArrayList = gymArray.map((gym) => <option>{gym}</option>);
+  return gymsArrayList;
 }

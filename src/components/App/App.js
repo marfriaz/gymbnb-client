@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 import PrivateRoute from "../Utils/PrivateRoute";
 import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
 import GymSearchPage from "../../routes/GymSearchPage/GymSearchPage";
@@ -45,6 +46,9 @@ class App extends Component {
             <Route component={NotFoundPage} />
           </Switch>
         </main>
+        <footer className="App__footer">
+          <Footer />
+        </footer>
       </div>
     );
   }

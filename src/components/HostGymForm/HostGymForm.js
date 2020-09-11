@@ -4,7 +4,11 @@ import GymApiService from "../../services/gym-api-service";
 import { Input, Required, Button } from "../Utils/Utils";
 
 export default class HostGymForm extends Component {
-  static contextType = GymContext;
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
 
   state = { error: null };
 
@@ -24,21 +28,10 @@ export default class HostGymForm extends Component {
       img_url_four: ev.target.img_url_four.value,
       img_url_five: ev.target.img_url_five.value,
     })
-      // .then(() => {
-      //   location.value = "";
-      //   price.value = "";
-      //   title.value = "";
-      //   description.value = "";
-      //   img_url_one.value = "";
-      // })
 
       .then((data) => {
-        console.log("from api", data);
-        this.context.setGym(data);
-        // this.props.history.push(`/gyms/${gym.id}`);
+        this.props.history.push(`/gyms/${data.id}`);
       })
-      .then(console.log("from context", this.context.gym))
-      .then(this.props.handleCreateSubmit(ev))
       .catch((res) => {
         this.setState({ error: res.error });
       });
@@ -46,7 +39,6 @@ export default class HostGymForm extends Component {
 
   render() {
     const { error } = this.state;
-    // console.log(this.props);
 
     return (
       <form className="HostGymForm" onSubmit={this.handleSubmit}>
@@ -62,13 +54,28 @@ export default class HostGymForm extends Component {
             id="HostGymForm__location"
           ></Input>
         </div>
+        <div className="location">
+          <label htmlFor="locationBox">Location: </label>
+
+          <select
+            type="text"
+            name="searchBox"
+            // id="searchBox"
+            placeholder="Search"
+          >
+            <option value="san-francisco">San Francisco</option>
+            <option value="sunnyvale">Sunnyvale</option>
+            <option value="los-angeles">Los Angeles</option>
+            <option value="san-diego">San Diego</option>
+          </select>
+        </div>
         <div className="price">
           <label htmlFor="HostGymForm__price">
             Price <Required />
           </label>
           <Input
             name="price"
-            type="text"
+            type="number"
             required
             id="HostGymForm__price"
           ></Input>
@@ -90,7 +97,7 @@ export default class HostGymForm extends Component {
           </label>
           <Input
             name="guests"
-            type="text"
+            type="number"
             required
             id="HostGymForm__guests"
           ></Input>
