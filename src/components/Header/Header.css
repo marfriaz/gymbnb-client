@@ -24,6 +24,12 @@
 .Header_login {
   margin-right: 20px;
   text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+.Header__logged-in {
+  display: flex;
+  flex-direction: column;
 }
 
 .Header__not-logged-in {
@@ -47,6 +53,11 @@
 
   .Header__not-logged-in .Hyph {
     display: initial;
+  }
+
+  .Header__logged-in {
+    display: flex;
+    flex-direction: row;
   }
 }
 

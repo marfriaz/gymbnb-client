@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
+import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
 import { Section, Input, Required } from "../../components/Utils/Utils";
 import "./GymPage.css";
 
@@ -26,21 +27,29 @@ export default class GymPage extends Component {
 
   renderGym() {
     const { gym } = this.context;
+
     return (
       <>
-        <GymPhotos gym={gym} />
+        <div className="GymPage_Photos_Container">
+          <PhotoSlideshow gym={gym} />
+        </div>
         <div className="GymPage_content">
           <div className="GymPage_details">
-            <div className="GymPage_title">{gym.title}</div>
-            <div className="GymPage_location">{gym.location}, CA</div>
-            <div>
-              <span className="GymPage_guests">{gym.guests}</span> max guests
+            <div className="GymPage_details_padding">
+              <div className="GymPage_title">{gym.title}</div>
+              <div className="GymPage_location">{gym.location}, CA</div>
+              <div>
+                <span className="GymPage_guests">{gym.max_guest}</span> max
+                guests
+              </div>
+
+              <GymDescription gym={gym} />
             </div>
-            <GymDescription gym={gym} />
           </div>
           <div className="GymPage_checkout">
             <div className="GymPage_checkout_padding">
               <div>
+                <div className="GymPage_title checkout">Checkout</div>
                 <span className="GymPage_price">${gym.price}</span> per hour
               </div>
               <div className="GymPage_date_and_time">
@@ -94,9 +103,7 @@ export default class GymPage extends Component {
               </div>
 
               <div className="Purchase_button_div">
-                <button className="Purchase_button button">
-                  Complete Purchase
-                </button>
+                <button className="Purchase_button button">Reserve</button>
               </div>
             </div>
           </div>
@@ -128,21 +135,9 @@ function GymDescription({ gym }) {
   return <p className="GymPage__description">{gym.description}</p>;
 }
 
-function GymPhotos({ gym }) {
-  return (
-    <div className="GymPage__photo_container">
-      <img
-        className="GymPage__photo"
-        src={gym.img_url_one}
-        alt="Home Gym Listing Photo"
-      />
-    </div>
-  );
-}
-
 function MaxGuests({ gym }) {
   let gymArray = [];
-  for (var i = 0; i <= gym.guests; i++) {
+  for (var i = 0; i <= gym.max_guest; i++) {
     gymArray.push(i);
   }
   const gymsArrayList = gymArray.map((gym) => <option>{gym}</option>);

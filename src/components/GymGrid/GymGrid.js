@@ -10,7 +10,7 @@ export default class GymGrid extends Component {
 
   renderGyms() {
     const { gymList = [] } = this.context;
-    const upToSix = gymList.slice(0, 6);
+    const upToSix = gymList.slice(0, 1);
     return upToSix.map((gym) => <GymGridItem key={gym.id} gym={gym} />);
   }
 

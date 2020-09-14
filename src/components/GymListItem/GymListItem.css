@@ -1,5 +1,6 @@
 .GymList_ul {
   list-style-type: none;
+  padding-inline-start: 0px;
 }
 
 .GymListItem {
@@ -33,8 +34,11 @@
 }
 
 .GymListItem__content {
-  text-align: left;
   padding: 12px;
+}
+.GymListItem_price_and_location {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* .GymListItem__header {
@@ -44,12 +48,17 @@
   /* font-family: "Poppins", sans-serif; */
   /* font-weight: 50; */
   /* line-height: 1.1; */
+  font-size: 22px;
   margin-bottom: 4px;
   margin-top: 1px;
 }
 
 .GymListItem__location {
   color: #7b858b;
+}
+
+.GymListItem__price {
+  font-weight: bold;
 }
 
 @media (min-width: 650px) {
@@ -68,5 +77,17 @@
   display: flex;
   align-items: normal;
   justify-content: space-between; */
+  }
+  .GymListItem__content {
+    text-align: left;
+    padding: 12px;
+  }
+
+  .GymListItem__title {
+    font-size: 30px;
+  }
+
+  .GymListItem_price_and_location {
+    display: block;
   }
 }

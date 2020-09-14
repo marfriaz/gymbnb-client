@@ -1,4 +1,10 @@
-.GymPage {
+.GymPage_Photos_Container {
+  /* width: 60%; */
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* .GymPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +15,10 @@
   padding: 0 25px;
   max-width: 1170px;
   box-sizing: border-box;
+} */
+
+.checkout {
+  text-align: center;
 }
 
 .GymPage__photo_container {
@@ -17,7 +27,7 @@
   justify-content: center;
   align-items: center;
   text-align: left;
-  height: 500px;
+  height: 250px;
   width: 100%;
 
   /* width: "400";
@@ -30,24 +40,24 @@
 .GymPage__photo {
   width: 90%;
   /* cover */
-  height: 400px;
+  height: 200px;
   /* width: 800px;
   height: 400px; */
 }
 
 .GymPage_content {
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   text-align: left;
 }
 
-.GymPage_details {
-  width: 55%;
+.GymPage_details_padding {
+  padding-right: 10%;
+  padding-left: 10%;
 }
 
 .GymPage_checkout {
-  width: 35%;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
   background: white;
   transition: all 0.3s ease;
@@ -105,3 +115,47 @@
 .GymPage_location {
   color: #7b858b;
 }
+
+@media (min-width: 650px) {
+  .GymPage_content {
+    flex-direction: row;
+  }
+
+  .GymPage_details {
+    width: 55%;
+  }
+
+  .GymPage_checkout {
+    width: 35%;
+  }
+
+  .GymPage__photo {
+    width: 90%;
+    /* cover */
+    height: 400px;
+    /* width: 800px;
+  height: 400px; */
+  }
+
+  .GymPage__photo_container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 500px;
+    width: 100%;
+
+    /* width: "400";
+  height: "400"; */
+    /* height: 24vw;
+  margin: 1%;
+  width: 29%; */
+  }
+}
+
+/* .slideshow-container {
+  width: 100px;
+  position: relative;
+  margin: auto;
+} */

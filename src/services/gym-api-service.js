@@ -28,16 +28,12 @@ const GymApiService = {
 
   postGym({
     title,
-    user_id,
+    // user_id,
     description,
-    guests,
+    max_guest,
     location,
     price,
-    img_url_one,
-    img_url_two,
-    img_url_three,
-    img_url_four,
-    img_url_five,
+    img_urls,
   }) {
     return fetch(`${config.API_ENDPOINT}/gyms`, {
       method: "POST",
@@ -48,16 +44,12 @@ const GymApiService = {
       body: JSON.stringify({
         title,
         //check user id
-        user_id,
+        // user_id,
         description,
-        guests,
+        max_guest,
         location,
         price,
-        img_url_one,
-        img_url_two,
-        img_url_three,
-        img_url_four,
-        img_url_five,
+        img_urls,
       }),
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
