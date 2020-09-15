@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import "./PhotoSlideshow.css";
 
 export default class PhotoSlideshow extends Component {
-  state = {
-    slideIndex: 0,
-    Slides: [],
-    currentSlide: 0,
-  };
-
-  componentDidMount() {
-    const { gym } = this.props;
+  constructor(props) {
+    super(props);
+    const { gym } = props;
     const { images } = gym;
     const imgsArray = images.img_urls;
-    this.setState({ Slides: imgsArray });
+
+    this.state = {
+      slideIndex: 0,
+      Slides: imgsArray,
+      currentSlide: 0,
+    };
   }
 
   plusSlides(n) {
@@ -32,7 +32,7 @@ export default class PhotoSlideshow extends Component {
     const { slideIndex, Slides } = this.state;
     console.log(Slides);
 
-    const GymPhotos = Slides.map((slide) => (
+    const slideShowDots = Slides.map((slide) => (
       <span className="dot" onClick={() => this.plusSlides(1)}></span>
     ));
 
@@ -40,23 +40,25 @@ export default class PhotoSlideshow extends Component {
       <>
         {" "}
         <>
-          <div class="slideshow-container" id={this.props.key}>
-            <div className="mySlides fade">
-              <div className="numbertext">
-                {slideIndex + 1} / {Slides.length}
+          <div>
+            <div class="slideshow-container" id={this.props.key}>
+              <div className="mySlides fade">
+                <div className="numbertext">
+                  {slideIndex + 1} / {Slides.length}
+                </div>
+                <div className="slideShow-image-container">
+                  <img className="slideShow-image" src={Slides[slideIndex]} />
+                </div>
               </div>
-              <div>
-                <img className="slideShow-image" src={Slides[slideIndex]} />
-              </div>
+              <a className="prev" onClick={() => this.plusSlides(-1)}>
+                &#10094;
+              </a>
+              <a className="next" onClick={() => this.plusSlides(1)}>
+                &#10095;
+              </a>
             </div>
-            <a className="prev" onClick={() => this.plusSlides(-1)}>
-              &#10094;
-            </a>
-            <a className="next" onClick={() => this.plusSlides(1)}>
-              &#10095;
-            </a>
+            <div>{slideShowDots}</div>
           </div>
-          <div>{GymPhotos}</div>
         </>
       </>
     );

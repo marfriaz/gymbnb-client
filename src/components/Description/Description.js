@@ -36,7 +36,6 @@ export default class Description extends Component {
       <section className="Description">
         <h2>How it Works</h2>
         <div className="Description_container">{list}</div>
-        <h2>List a Gym</h2>
       </section>
     );
   }

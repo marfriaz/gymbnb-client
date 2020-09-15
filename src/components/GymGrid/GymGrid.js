@@ -10,7 +10,7 @@ export default class GymGrid extends Component {
 
   renderGyms() {
     const { gymList = [] } = this.context;
-    const upToSix = gymList.slice(0, 1);
+    const upToSix = gymList.slice(0, 6);
     return upToSix.map((gym) => <GymGridItem key={gym.id} gym={gym} />);
   }
 
@@ -29,12 +29,12 @@ export default class GymGrid extends Component {
               this.renderGyms()
             )}
           </div>
-          <Link to={`/gyms`} className="GymGridExploreButton">
-            <button type="Submit" className="button">
-              Explore {gymList.length - 6} more
-            </button>
-          </Link>
         </Section>
+        <Link to={`/gyms`} className="GymGridExploreButton">
+          <button type="Submit" className="button">
+            Explore {gymList.length - 6} more
+          </button>
+        </Link>
       </>
     );
   }

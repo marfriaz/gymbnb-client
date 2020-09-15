@@ -49,7 +49,9 @@ export default class GymPage extends Component {
           <div className="GymPage_checkout">
             <div className="GymPage_checkout_padding">
               <div>
-                <div className="GymPage_title checkout">Checkout</div>
+                <div className="GymPage_title">
+                  Book {gym.user.first_name}'s Gym:
+                </div>
                 <span className="GymPage_price">${gym.price}</span> per hour
               </div>
               <div className="GymPage_date_and_time">
@@ -95,7 +97,6 @@ export default class GymPage extends Component {
                 </div>
               </div>
               <div>
-                <div>Payment Details</div>
                 <div>
                   Once the host approves your request, you will be asked to
                   confirm it. Only then will you be charged.
