@@ -1,6 +1,5 @@
 .slideshow-container {
   width: 100%;
-
   position: relative;
   margin: auto;
 }
@@ -11,7 +10,7 @@
 
 .slideShow-image-container {
   width: 100%;
-  height: 150px;
+  height: 100%;
 }
 
 .slideShow-image {

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
 import { Input, Required, Button } from "../Utils/Utils";
 import "./HostGymForm.css";

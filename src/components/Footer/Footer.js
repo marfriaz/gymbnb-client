@@ -11,15 +11,15 @@ export default class Footer extends Component {
   render() {
     return (
       <>
-        <ul class="social">
-          <li class="social_icon">
+        <ul className="social">
+          <li className="social_icon">
             <FontAwesomeIcon className="green" icon={faFacebook} />
             {/* <i class="fab fa-twitter"></i> */}
           </li>
-          <li class="social_icon">
+          <li className="social_icon">
             <FontAwesomeIcon className="green" icon={faTwitter} />
           </li>
-          <li class="social_icon">
+          <li className="social_icon">
             <FontAwesomeIcon className="green" icon={faLinkedin} />
           </li>
         </ul>

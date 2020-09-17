@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
+import GymPagePhotos from "../../components/GymPagePhotos/GymPagePhotos";
 import "./GymGridItem.css";
 
 export default class GymGridItem extends Component {
@@ -9,7 +9,7 @@ export default class GymGridItem extends Component {
     return (
       <div className="GymGridItem">
         <div className="GymGridItem_PhotoSlideshow">
-          <PhotoSlideshow gym={gym} />
+          <GymPagePhotos gym={gym} />
         </div>
         <div>
           <Link to={`/gyms/${gym.id}`} className="GymGridItem_content">

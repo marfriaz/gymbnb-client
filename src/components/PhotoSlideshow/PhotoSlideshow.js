@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./PhotoSlideshow.css";
+import { render } from "@testing-library/react";
 
 export default class PhotoSlideshow extends Component {
   constructor(props) {
