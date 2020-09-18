@@ -82,7 +82,7 @@ export default class GymListPage extends Component {
       <>
         <Section list className="GymListPage">
           <SearchBox handleSearchSubmit={(event) => this.handleSubmit(event)} />
-          <h1>Gyms in {location} </h1>
+          <h1 className="GymListPage_title">Gyms in {location} </h1>
           <ul className="GymListItems_container">
             {error ? (
               <p className="red">There was an error, try again </p>

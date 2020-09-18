@@ -18,4 +18,11 @@ footer {
 
 .social_icon {
   display: inline;
+  font-size: 1.3em;
+}
+
+@media screen and (min-width: 1000px) {
+  .social_icon {
+    font-size: 1.6em;
+  }
 }

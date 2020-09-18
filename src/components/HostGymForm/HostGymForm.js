@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import GymApiService from "../../services/gym-api-service";
 import { Input, Required, Button } from "../Utils/Utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import "./HostGymForm.css";
 
 export default class HostGymForm extends Component {
