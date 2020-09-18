@@ -3,7 +3,7 @@ import React, { Component } from "react";
 const GymListContext = React.createContext({
   gymList: [],
   gymListCount: "",
-  location: "",
+  location: "All",
   error: null,
   setError: () => {},
   clearError: () => {},
@@ -25,14 +25,9 @@ export class GymListProvider extends Component {
     // this.setGymCount(gymList);
   };
 
-  // setGymCount = (gymList) => {
-  //   const count = gymList.length;
-  //   this.setState.gymListCount({ count });
-  // };
-
-  // setLocation = (gymLocation) => {
-  //   this.setState({ location: `${gymLocation}` });
-  // };
+  setLocation = (gymLocation) => {
+    this.setState({ location: `${gymLocation}` });
+  };
 
   setError = (error) => {
     console.error(error);
@@ -53,7 +48,6 @@ export class GymListProvider extends Component {
       clearError: this.clearError,
       setGymList: this.setGymList,
       setLocation: this.setLocation,
-      // setGymCount: this.setGymCount,
     };
     return (
       <GymListContext.Provider value={value}>

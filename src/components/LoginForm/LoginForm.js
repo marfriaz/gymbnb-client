@@ -19,7 +19,7 @@ export default class LoginForm extends Component {
       email: email.value,
       password: password.value,
     })
-      .then(console.log(email, password))
+
       .then((res) => {
         email.value = "";
         password.value = "";

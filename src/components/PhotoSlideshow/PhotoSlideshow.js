@@ -31,7 +31,6 @@ export default class PhotoSlideshow extends Component {
 
   render() {
     const { slideIndex, Slides } = this.state;
-    console.log(Slides);
 
     const slideShowDots = Slides.map((slide) => (
       <span className="dot" onClick={() => this.plusSlides(1)}></span>

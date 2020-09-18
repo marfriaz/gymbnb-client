@@ -49,7 +49,7 @@
 
 @media (min-width: 1300px) {
   .SearchBox_container {
-    width: 600px;
+    width: 300px;
   }
 
   .SearchBar {
@@ -58,7 +58,7 @@
 
   #searchBox {
     height: 48px;
-    width: 30%;
+    width: 50%;
   }
 }
 

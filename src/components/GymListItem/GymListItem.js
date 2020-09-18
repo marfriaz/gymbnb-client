@@ -9,7 +9,9 @@ export default class GymListItem extends Component {
     const { gym, key } = this.props;
     return (
       <div className="GymListItem">
-        <PhotoSlideshow gym={gym} key={key} />
+        <div className="GymListItem_PhotoSlideshow">
+          <PhotoSlideshow gym={gym} key={key} />
+        </div>
         <div className="GymListItem__content">
           <header className="GymListItem__header">
             <h2 className="GymListItem__title">{gym.title}</h2>
@@ -32,17 +34,4 @@ export default class GymListItem extends Component {
       </div>
     );
   }
-}
-
-// MINI GRID OF PHOTOS?????
-function GymPhotos({ gym }) {
-  return (
-    <div className="GymListItem__photo_container">
-      <img
-        className="GymListItem__photo"
-        src={gym.img_url_one}
-        alt="Home Gym Listing Photo"
-      />
-    </div>
-  );
 }
