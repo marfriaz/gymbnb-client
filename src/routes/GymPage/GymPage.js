@@ -49,7 +49,7 @@ export default class GymPage extends Component {
           <div className="GymPage_checkout">
             <div className="GymPage_checkout_padding">
               <div>
-                <div className="GymPage_title">
+                <div className="GymPage_title host">
                   Book {gym.user.first_name}'s Gym:
                 </div>
                 <span className="GymPage_price">${gym.price}</span> per hour
@@ -92,7 +92,6 @@ export default class GymPage extends Component {
                     placeholder="Search"
                   >
                     <MaxGuests gym={gym} />
-                    {/* <option> {gym.guests}</option> */}
                   </select>
                 </div>
               </div>

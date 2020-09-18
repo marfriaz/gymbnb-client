@@ -14,7 +14,6 @@ export default class Footer extends Component {
         <ul className="social">
           <li className="social_icon">
             <FontAwesomeIcon className="green" icon={faFacebook} />
-            {/* <i class="fab fa-twitter"></i> */}
           </li>
           <li className="social_icon">
             <FontAwesomeIcon className="green" icon={faTwitter} />

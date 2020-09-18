@@ -18,7 +18,6 @@ export default class HostGymForm extends Component {
   updateState = (ev) => {
     ev.preventDefault();
     var joined = this.state.img_urls.concat(ev.target.img_urls.value);
-    // var joined = ev.target.img_urls.value;
     this.setState({ img_urls: joined });
     ev.target.img_urls.value = "";
     console.log(this.state.img_urls);
@@ -66,14 +65,7 @@ export default class HostGymForm extends Component {
             <div role="alert">{error && <p className="red">{error}</p>}</div>
             <div className="location">
               <label htmlFor="HostGymForm__location">Location: </label>
-              <select
-                type="text"
-                // name="searchBox"
-                name="location"
-                required
-                // id="searchBox"
-                placeholder="Search"
-              >
+              <select type="text" name="location" required placeholder="Search">
                 <option value="san-francisco">San Francisco</option>
                 <option value="sunnyvale">Sunnyvale</option>
                 <option value="los-angeles">Los Angeles</option>

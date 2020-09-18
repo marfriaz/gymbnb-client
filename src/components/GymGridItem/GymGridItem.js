@@ -21,13 +21,3 @@ export default class GymGridItem extends Component {
     );
   }
 }
-
-// function GymPhotos({ gym }) {
-//   return (
-//     <img
-//       className="GymGridItem__photo"
-//       src={gym.img_url_one}
-//       alt="Home Gym Listing Photo"
-//     />
-//   );
-// }

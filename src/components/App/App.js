@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import PrivateRoute from "../Utils/PrivateRoute";
 import PublicOnlyRoute from "../Utils/PublicOnlyRoute";
-import GymSearchPage from "../../routes/GymSearchPage/GymSearchPage";
+import HomePage from "../../routes/HomePage/HomePage";
 import GymPage from "../../routes/GymPage/GymPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
 import HostGymPage from "../../routes/HostGymPage/HostGymPage";
@@ -33,7 +33,7 @@ class App extends Component {
           )}
 
           <Switch>
-            <Route exact path={"/"} component={GymSearchPage} />
+            <Route exact path={"/"} component={HomePage} />
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/signup"} component={SignUpPage} />
             <PrivateRoute path={"/hostgym"} component={HostGymPage} />

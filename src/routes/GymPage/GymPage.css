@@ -1,5 +1,8 @@
+.GymPage {
+  margin-top: 2%;
+}
+
 .GymPage_Photos_Container {
-  /* width: 60%; */
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -14,26 +17,16 @@
 
 .GymPage__photo_container {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
   text-align: left;
   height: 250px;
   width: 100%;
-
-  /* width: "400";
-  height: "400"; */
-  /* height: 24vw;
-  margin: 1%;
-  width: 29%; */
 }
 
 .GymPage__photo {
   width: 90%;
-  /* cover */
   height: 200px;
-  /* width: 800px;
-  height: 400px; */
 }
 
 .GymPage_content {
@@ -59,6 +52,9 @@
 .GymPage_title {
   font-weight: 800;
   text-align: left;
+}
+.host {
+  text-decoration: underline;
 }
 
 .GymPage_guests,
@@ -122,31 +118,15 @@
 
   .GymPage__photo {
     width: 90%;
-    /* cover */
     height: 400px;
-    /* width: 800px;
-  height: 400px; */
   }
 
   .GymPage__photo_container {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     text-align: left;
     height: 500px;
     width: 100%;
-
-    /* width: "400";
-  height: "400"; */
-    /* height: 24vw;
-  margin: 1%;
-  width: 29%; */
   }
 }
-
-/* .slideshow-container {
-  width: 100px;
-  position: relative;
-  margin: auto;
-} */
