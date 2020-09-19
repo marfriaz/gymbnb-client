@@ -55,6 +55,15 @@
   font-weight: 800;
   text-align: left;
 }
+
+.GymPage_contact {
+  font-weight: 800;
+  text-align: center;
+}
+
+.GymPage_host {
+  font-weight: bold;
+}
 .host {
   text-decoration: underline;
 }
@@ -84,21 +93,39 @@
   margin-left: 10px;
   width: 80px;
 }
-
-.Purchase_button_div {
-  margin-top: 10px;
+.Email_host_container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  text-align: center;
+  color: red;
 }
 
-.button {
-  font-size: 14px;
-  font-weight: 700;
-  padding: 12px 27px;
+.Email_host {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
   background-color: red;
-  color: #ffffff;
+  width: 140px;
   border: 0;
   border-radius: 500px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 4px;
+}
+
+.Email_host_text {
+  color: white;
+}
+
+.Email_icon {
+  color: white;
+}
+a {
+  text-decoration: none;
 }
 
 .GymPage_location {
@@ -131,4 +158,14 @@
     height: 500px;
     width: 100%;
   }
+}
+
+@media (min-width: 1000px) {
+  /* .Email_host {
+    width: 150px;
+    border-radius: 500px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 27px;
+  } */
 }

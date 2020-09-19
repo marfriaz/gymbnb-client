@@ -3,6 +3,8 @@ import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
 import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
 import { Section, Input, Required } from "../../components/Utils/Utils";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./GymPage.css";
 
 export default class GymPage extends Component {
@@ -27,6 +29,7 @@ export default class GymPage extends Component {
 
   renderGym() {
     const { gym } = this.context;
+    const email_href = `malito:${gym.user.email}`;
 
     return (
       <>
@@ -39,14 +42,54 @@ export default class GymPage extends Component {
               <div className="GymPage_title">{gym.title}</div>
               <div className="GymPage_location">{gym.location}, CA</div>
               <div>
+                <span className="GymPage_price">${gym.price}</span> per hour
+              </div>
+              <div>
                 <span className="GymPage_guests">{gym.max_guest}</span> max
                 guests
               </div>
-
               <GymDescription gym={gym} />
             </div>
           </div>
           <div className="GymPage_checkout">
+            <div className="GymPage_checkout_padding">
+              <div>
+                <div className="GymPage_contact host">Contact Host</div>
+                <div className="GymPage_host">
+                  Host Name: {gym.user.first_name}
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  To book {gym.user.first_name}'s home gym, please email the
+                  host and specify:
+                  <ul>
+                    <li>Requested Date and Time</li>
+                    <li>How many guests ({gym.max_guest} guests max)</li>
+                  </ul>
+                  Once the host approves your request, you will be asked to
+                  confirm. Only then will you be charged. All our hosts accept
+                  Venmo as payment.
+                </div>
+              </div>
+              <div className="Email_host_container">
+                <div className="Email_host">
+                  <a target="_blank" href={email_href}>
+                    <div>
+                      <FontAwesomeIcon
+                        className="List_icon Email_icon Description_icon icon"
+                        icon={faEnvelope}
+                      />
+                    </div>
+                    <div className="Email_host_text">Email Host</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div className="GymPage_checkout">
             <div className="GymPage_checkout_padding">
               <div>
                 <div className="GymPage_title host">
@@ -105,8 +148,11 @@ export default class GymPage extends Component {
               <div className="Purchase_button_div">
                 <button className="Purchase_button button">Reserve</button>
               </div>
+
+
+              
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     );
