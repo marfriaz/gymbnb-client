@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
 import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
-import { Section, Input, Required } from "../../components/Utils/Utils";
+import { Section } from "../../components/Utils/Utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./GymPage.css";
@@ -181,11 +181,11 @@ function GymDescription({ gym }) {
   return <p className="GymPage__description">{gym.description}</p>;
 }
 
-function MaxGuests({ gym }) {
-  let gymArray = [];
-  for (var i = 0; i <= gym.max_guest; i++) {
-    gymArray.push(i);
-  }
-  const gymsArrayList = gymArray.map((gym) => <option>{gym}</option>);
-  return gymsArrayList;
-}
+// function MaxGuests({ gym }) {
+//   let gymArray = [];
+//   for (var i = 0; i <= gym.max_guest; i++) {
+//     gymArray.push(i);
+//   }
+//   const gymsArrayList = gymArray.map((gym) => <option>{gym}</option>);
+//   return gymsArrayList;
+// }

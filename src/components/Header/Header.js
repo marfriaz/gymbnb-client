@@ -37,7 +37,8 @@ export default class Header extends Component {
       <nav className="Header">
         <h1>
           <Link to="/" className="Header_title">
-            <FontAwesomeIcon className="green" icon={faDumbbell} /> Gymbnb
+            <FontAwesomeIcon className="Dumbbell_icon" icon={faDumbbell} />{" "}
+            Gymbnb
           </Link>
         </h1>
         <div className="Header_login">

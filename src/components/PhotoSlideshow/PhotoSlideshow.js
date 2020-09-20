@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./PhotoSlideshow.css";
-import { render } from "@testing-library/react";
 
 export default class PhotoSlideshow extends Component {
   constructor(props) {
@@ -40,25 +39,27 @@ export default class PhotoSlideshow extends Component {
       <>
         {" "}
         <>
-          <div>
-            <div class="slideshow-container" id={this.props.key}>
-              <div className="mySlides fade">
-                <div className="numbertext">
-                  {slideIndex + 1} / {Slides.length}
-                </div>
-                <div className="slideShow-image-container">
-                  <img className="slideShow-image" src={Slides[slideIndex]} />
-                </div>
+          <div className="slideshow-container" id={this.props.key}>
+            <div className="mySlides fade">
+              <div className="numbertext">
+                {slideIndex + 1} / {Slides.length}
               </div>
-              <a className="prev" onClick={() => this.plusSlides(-1)}>
-                &#10094;
-              </a>
-              <a className="next" onClick={() => this.plusSlides(1)}>
-                &#10095;
-              </a>
+              <div className="slideShow-image-container">
+                <img
+                  className="slideShow-image"
+                  alt="Listed Gym"
+                  src={Slides[slideIndex]}
+                />
+              </div>
             </div>
-            <div>{slideShowDots}</div>
+            <a className="prev" onClick={() => this.plusSlides(-1)}>
+              &#10094;
+            </a>
+            <a className="next" onClick={() => this.plusSlides(1)}>
+              &#10095;
+            </a>
           </div>
+          <div>{slideShowDots}</div>
         </>
       </>
     );

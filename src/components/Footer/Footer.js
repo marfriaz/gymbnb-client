@@ -13,13 +13,13 @@ export default class Footer extends Component {
       <>
         <ul className="social">
           <li className="social_icon">
-            <FontAwesomeIcon className="green" icon={faFacebook} />
+            <FontAwesomeIcon className="Facebook_icon" icon={faFacebook} />
           </li>
           <li className="social_icon">
-            <FontAwesomeIcon className="green" icon={faTwitter} />
+            <FontAwesomeIcon className="Twitter_icon" icon={faTwitter} />
           </li>
           <li className="social_icon">
-            <FontAwesomeIcon className="green" icon={faLinkedin} />
+            <FontAwesomeIcon className="Linkedin_icon" icon={faLinkedin} />
           </li>
         </ul>
       </>
