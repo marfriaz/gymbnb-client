@@ -1,0 +1,67 @@
+.HomePage {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.HomePage_SearchBar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url(https://live.staticflickr.com/65535/50319765038_b60510e2a1_b.jpg)
+    no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.SearchBox_container {
+  background-color: white;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 1px solid #ebebeb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.SearchBar__heading {
+  color: white;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.SearchBar {
+  margin-bottom: 5%;
+}
+
+@media (min-width: 650px) {
+  .HomePage_SearchBar {
+    height: 500px;
+  }
+
+  .SearchBar__heading {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .SearchBar__heading {
+    font-weight: bold;
+    font-size: 1.8em;
+  }
+
+  .HomePage_SearchBar {
+    width: 80%;
+    height: 500px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .HomePage_SearchBar {
+    height: 700px;
+  }
+}
