@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GymContext from "../../contexts/GymContext";
 import GymApiService from "../../services/gym-api-service";
-import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
+import GymPageSlideShow from "../../components/GymPageSlideShow/GymPageSlideShow";
 import { Section } from "../../components/Utils/Utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,7 @@ export default class GymPage extends Component {
       <>
         <div className="GymPage">
           <div className="GymPage_Photos_Container">
-            <PhotoSlideshow gym={gym} />
+            <GymPageSlideShow gym={gym} />
           </div>
           <div className="GymPage_content">
             <div className="GymPage_details">
