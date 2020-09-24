@@ -21,7 +21,7 @@ body {
 }
 
 .GymListItem_PhotoSlideshow {
-  height: 60%;
+  /* height: 60%; */
   margin-bottom: 2%;
 }
 
@@ -47,22 +47,92 @@ body {
   font-weight: bold;
 }
 
-@media (min-width: 650px) {
+.button {
+  font-size: 14px;
+  padding: 12px 27px;
+  background-color: red;
+  color: #fff;
+  border: 0;
+  border-radius: 500px;
+}
+
+@media (min-width: 600px) {
   .GymListItem_PhotoSlideshow {
-    width: 70%;
-    margin-bottom: 2%;
+    width: 450px;
   }
 
+  .GymListItem__price {
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .GymListItems_container {
+    width: 90%;
+  }
+  .GymListItem {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .GymListItem_PhotoSlideshow {
+    width: 1100px;
+  }
   .GymListItem__content {
     text-align: left;
-    padding: 12px;
+    padding: 20px;
+  }
+  .GymListItem_price_and_location {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .GymListItem__price {
+    margin-left: 30px;
+  }
+  .GymListItem_link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .GymListItem_link_button {
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .GymListItems_container {
+    width: 80%;
   }
 
   .GymListItem__title {
     font-size: 30px;
   }
+  .GymListItem {
+    align-items: center;
+    font-size: 25px;
+  }
+  .GymListItem_link_button {
+    margin-top: 50px;
+  }
+}
 
-  .GymListItem_price_and_location {
-    display: block;
+@media (min-width: 800px) {
+  .button {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .button {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 2500px) {
+  .button {
+    font-size: 25px;
   }
 }

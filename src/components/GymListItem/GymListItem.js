@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PhotoSlideshow from "../../components/PhotoSlideshow/PhotoSlideshow";
-
 import "./GymListItem.css";
 
 export default class GymListItem extends Component {
@@ -26,7 +25,7 @@ export default class GymListItem extends Component {
 
           <p>{gym.description}</p>
           <Link to={`/gyms/${gym.id}`} className="GymListItem_link">
-            <button type="Submit" className="button">
+            <button type="Submit" className="GymListItem_link_button button">
               See more details
             </button>
           </Link>

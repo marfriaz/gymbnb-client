@@ -19,11 +19,11 @@ export default class GymGrid extends Component {
 
     return (
       <>
-        <Section list className="GymGrid">
+        <Section list className="GymGrid ">
           <div className="GymGridHeader">
             <h2>Available Gyms in California</h2>
           </div>
-          <div className="GymGridItems_container">
+          <div className="GymGridItems_container clearfix">
             {error ? (
               <p className="red">There was an error, try again</p>
             ) : (

@@ -33,57 +33,59 @@ export default class GymPage extends Component {
 
     return (
       <>
-        <div className="GymPage_Photos_Container">
-          <PhotoSlideshow gym={gym} />
-        </div>
-        <div className="GymPage_content">
-          <div className="GymPage_details">
-            <div className="GymPage_details_padding">
-              <div className="GymPage_title">{gym.title}</div>
-              <div className="GymPage_location">{gym.location}, CA</div>
-              <div>
-                <span className="GymPage_price">${gym.price}</span> per hour
-              </div>
-              <div>
-                <span className="GymPage_guests">{gym.max_guest}</span> max
-                guests
-              </div>
-              <GymDescription gym={gym} />
-            </div>
+        <div className="GymPage">
+          <div className="GymPage_Photos_Container">
+            <PhotoSlideshow gym={gym} />
           </div>
-          <div className="GymPage_checkout">
-            <div className="GymPage_checkout_padding">
-              <div>
-                <div className="GymPage_contact host">Contact Host</div>
-                <div className="GymPage_host">
-                  Host Name: {gym.user.first_name}
-                </div>
-              </div>
-
-              <div>
+          <div className="GymPage_content">
+            <div className="GymPage_details">
+              <div className="GymPage_details_padding">
+                <div className="GymPage_title">{gym.title}</div>
+                <div className="GymPage_location">{gym.location}, CA</div>
                 <div>
-                  To book {gym.user.first_name}'s home gym, please email the
-                  host and specify:
-                  <ul>
-                    <li>Requested Date and Time</li>
-                    <li>How many guests ({gym.max_guest} guests max)</li>
-                  </ul>
-                  Once the host approves your request, you will be asked to
-                  confirm. Only then will you be charged. All our hosts accept
-                  Venmo as payment.
+                  <span className="GymPage_price">${gym.price}</span> per hour
                 </div>
+                <div>
+                  <span className="GymPage_guests">{gym.max_guest}</span> max
+                  guests
+                </div>
+                <GymDescription gym={gym} />
               </div>
-              <div className="Email_host_container">
-                <div className="Email_host">
-                  <a target="_blank" href={email_href}>
-                    <div>
-                      <FontAwesomeIcon
-                        className="List_icon Email_icon Description_icon icon"
-                        icon={faEnvelope}
-                      />
-                    </div>
-                    <div className="Email_host_text">Email Host</div>
-                  </a>
+            </div>
+            <div className="GymPage_checkout">
+              <div className="GymPage_checkout_padding">
+                <div>
+                  <div className="GymPage_contact host">Contact Host</div>
+                  <div className="GymPage_host">
+                    Host Name: {gym.user.first_name}
+                  </div>
+                </div>
+
+                <div>
+                  <div>
+                    To book {gym.user.first_name}'s home gym, please email the
+                    host and specify:
+                    <ul>
+                      <li>Requested Date and Time</li>
+                      <li>How many guests ({gym.max_guest} guests max)</li>
+                    </ul>
+                    Once the host approves your request, you will be asked to
+                    confirm. Only then will you be charged. All our hosts accept
+                    Venmo as payment.
+                  </div>
+                </div>
+                <div className="Email_host_container">
+                  <div className="Email_host">
+                    <a target="_blank" href={email_href}>
+                      <div>
+                        <FontAwesomeIcon
+                          className="List_icon Email_icon Description_icon icon"
+                          icon={faEnvelope}
+                        />
+                      </div>
+                      <div className="Email_host_text">Email Host</div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

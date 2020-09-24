@@ -10,7 +10,7 @@
 
 .slideShow-image-container {
   width: 100%;
-  height: 100%;
+  height: 250px;
 }
 
 .slideShow-image {
@@ -111,7 +111,7 @@
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 600px) {
   .prev,
   .next {
     font-size: 25px;
@@ -127,7 +127,7 @@
 
   .slideShow-image-container {
     width: 100%;
-    height: 150px;
+    height: 400px;
   }
   .slideShow-image-container {
     margin-bottom: 3%;
@@ -155,7 +155,7 @@
   }
   .slideShow-image-container {
     width: 100%;
-    height: 500px;
+    height: 400px;
   }
 }
 
