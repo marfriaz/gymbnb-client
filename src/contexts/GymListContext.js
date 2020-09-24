@@ -22,7 +22,6 @@ export class GymListProvider extends Component {
 
   setGymList = (gymList) => {
     this.setState({ gymList });
-    // this.setGymCount(gymList);
   };
 
   setLocation = (gymLocation) => {

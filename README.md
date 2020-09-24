@@ -1,68 +1,54 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Gymbnb
 
-## Available Scripts
+Users can book local home gyms in their area
 
-In the project directory, you can run:
+This repo is the front-end client, built in React. You can see the app live at [https://gymbnb-client.vercel.app](https://gymbnb-client.vercel.app)
 
-### `npm start`
+To try out this app, you may create a new dummy account from the Sign Up page, or use the Demo Account listed below.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Demo Account Details
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- email: user@gmail.com
+- password: password
 
-### `npm test`
+## Motivation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+During SF's required quarantine, my gym membership was paused without a forseeable date of when the gym would re-open. Working out is an important ordeal for me, it enhances my mood and keeps me grounded, so I decided to build my own home gym (featured on this Web App). The gym equipment was pricey and I'm the only one using it! My friends would occasionally ask to use my home gym as they didn't own their own equipment. Hence, I created Gymbnb: a local home gym reservation web app.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Attain your 12 most played artists on Spotify
+- Edit the list of artists you want displayed on the music festival lineup poster
+- See final music festival lineup poster and concert videos of the artists
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Demo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Live Demo](https://marfriaz.github.io/couchella/)
 
-### `npm run eject`
+#### Front End
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React
+  - [Create React App](https://github.com/facebook/create-react-app).
+  - React Router
+- HTML5
+- CSS3 (scratch - no frameworks)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Testing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Jest (screen captures & smoke tests)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Production
 
-## Learn More
+- Deployed via Vercel
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Getting Started
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Run `npm install` to load dependencies
 
-### Code Splitting
+Run `npm test` to ensure a stable build
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This is only the front end client, so develop locally you'll need the backend server as well.
 
-### Analyzing the Bundle Size
+To get the backend up and running see [https://github.com/marfriaz/gymbnb-server](https://github.com/marfriaz/gymbnb-server)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Deployments are handled through Vercel and can be run via `npm run deploy`

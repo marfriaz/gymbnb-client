@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import SearchBox from "../SearchBox/SearchBox";
-// import "./SearchBar.css";
 
 class SearchBar extends Component {
   render() {

@@ -22,7 +22,6 @@
   font-size: 1.7em;
 }
 
-/* For screens 520px or less */
 @media screen and (max-width: 520px) {
   .Description_container {
     display: flex;

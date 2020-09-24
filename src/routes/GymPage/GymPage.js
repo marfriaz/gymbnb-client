@@ -90,71 +90,6 @@ export default class GymPage extends Component {
               </div>
             </div>
           </div>
-
-          {/* <div className="GymPage_checkout">
-            <div className="GymPage_checkout_padding">
-              <div>
-                <div className="GymPage_title host">
-                  Book {gym.user.first_name}'s Gym:
-                </div>
-                <span className="GymPage_price">${gym.price}</span> per hour
-              </div>
-              <div className="GymPage_date_and_time">
-                <div className="GymPage_date">
-                  <label htmlFor="GymPage_date">
-                    Date <Required />
-                  </label>
-                  <Input
-                    name="date"
-                    type="text"
-                    required
-                    id="GymPage_date"
-                  ></Input>
-                </div>
-
-                <div className="GymPage_time">
-                  <label htmlFor="GymPage_time">
-                    Time <Required />
-                  </label>
-                  <Input
-                    name="date"
-                    type="text"
-                    required
-                    id="GymPage_time"
-                  ></Input>
-                </div>
-              </div>
-              <div>
-                <div className="GymPage_guests_input">
-                  <label htmlFor="GymPage_guests_input">
-                    Who will be coming?
-                  </label>
-
-                  <select
-                    type="text"
-                    name="searchBox"
-                    id="guestSelectBox"
-                    placeholder="Search"
-                  >
-                    <MaxGuests gym={gym} />
-                  </select>
-                </div>
-              </div>
-              <div>
-                <div>
-                  Once the host approves your request, you will be asked to
-                  confirm it. Only then will you be charged.
-                </div>
-              </div>
-
-              <div className="Purchase_button_div">
-                <button className="Purchase_button button">Reserve</button>
-              </div>
-
-
-              
-            </div>
-          </div> */}
         </div>
       </>
     );
@@ -182,12 +117,3 @@ export default class GymPage extends Component {
 function GymDescription({ gym }) {
   return <p className="GymPage__description">{gym.description}</p>;
 }
-
-// function MaxGuests({ gym }) {
-//   let gymArray = [];
-//   for (var i = 0; i <= gym.max_guest; i++) {
-//     gymArray.push(i);
-//   }
-//   const gymsArrayList = gymArray.map((gym) => <option>{gym}</option>);
-//   return gymsArrayList;
-// }

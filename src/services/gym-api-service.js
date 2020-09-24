@@ -26,15 +26,7 @@ const GymApiService = {
     );
   },
 
-  postGym({
-    title,
-    // user_id,
-    description,
-    max_guest,
-    location,
-    price,
-    img_urls,
-  }) {
+  postGym({ title, description, max_guest, location, price, img_urls }) {
     return fetch(`${config.API_ENDPOINT}/gyms`, {
       method: "POST",
       headers: {
@@ -43,8 +35,6 @@ const GymApiService = {
       },
       body: JSON.stringify({
         title,
-        //check user id
-        // user_id,
         description,
         max_guest,
         location,
