@@ -7,7 +7,7 @@ body {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .GymGridItem {
@@ -16,7 +16,6 @@ body {
   background: white;
   transition: all 0.3s ease;
   margin-bottom: 5%;
-
   text-decoration: none;
 }
 
