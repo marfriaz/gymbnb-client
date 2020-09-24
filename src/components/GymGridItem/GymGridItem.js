@@ -11,8 +11,8 @@ export default class GymGridItem extends Component {
         <div className="GymGridItem_PhotoSlideshow">
           <GymPagePhotos gym={gym} />
         </div>
-        <div>
-          <Link to={`/gyms/${gym.id}`} className="GymGridItem_content">
+        <div className="GymGridItem_content">
+          <Link to={`/gyms/${gym.id}`}>
             <div className="GymGridItem_title">{gym.title}</div>
             <div className="GymGridItem_location">{gym.location}</div>
           </Link>

@@ -11,3 +11,22 @@
   font-weight: bold;
   font-size: 0.8em;
 }
+@media (min-width: 1000px) {
+  .GymGrid {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+@media (min-width: 1500px) {
+  .GymGrid {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .GymGrid {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}

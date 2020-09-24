@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import GymListContext from "../../contexts/GymListContext";
 import { Section } from "../../components/Utils/Utils";
 import GymGridItem from "../../components/GymGridItem/GymGridItem";
+import GymGridButton from "../../components/GymGridButton/GymGridButton";
 import "./GymGrid.css";
 
 export default class GymGrid extends Component {
@@ -16,6 +16,7 @@ export default class GymGrid extends Component {
 
   render() {
     const { error, gymList } = this.context;
+
     return (
       <>
         <Section list className="GymGrid">
@@ -30,11 +31,7 @@ export default class GymGrid extends Component {
             )}
           </div>
         </Section>
-        <Link to={`/gyms`} className="GymGridExploreButton">
-          <button type="Submit" className="button">
-            Explore {gymList.length - 6} more
-          </button>
-        </Link>
+        <GymGridButton gymList={gymList} />
       </>
     );
   }
