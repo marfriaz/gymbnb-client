@@ -13,6 +13,24 @@ To try out this app, you can create a new account from the Sign Up page or use t
 - Email: user@gmail.com
 - Password: password
 
+## Technology
+
+#### Front End
+
+- React
+  - [Create React App](https://github.com/facebook/create-react-app)
+  - React Router
+- HTML5
+- CSS3 (scratch - no frameworks)
+
+#### Testing
+
+- Jest (smoke tests)
+
+#### Production
+
+- Deployed via Vercel
+
 ## Features
 
 - Search gyms by location
@@ -34,24 +52,6 @@ During SF's covid stay at home mandate, my gym was shutdown without a forseeable
 [![Watch the video](https://i.imgur.com/NvdEQju.png)](https://www.youtube.com/watch?v=vccD64fxJ2M&feature=youtu.be&ab_channel=MarcoFriaz)
 
 - [Gymbnb Login (Youtube Vid Demo)](https://www.youtube.com/watch?v=vccD64fxJ2M&feature=youtu.be&ab_channel=MarcoFriaz)
-
-## Technology
-
-#### Front End
-
-- React
-  - [Create React App](https://github.com/facebook/create-react-app)
-  - React Router
-- HTML5
-- CSS3 (scratch - no frameworks)
-
-#### Testing
-
-- Jest (smoke tests)
-
-#### Production
-
-- Deployed via Vercel
 
 ## Getting Started
 
