@@ -1,10 +1,10 @@
 # Gymbnb
 
-Users can book local home gyms in their area
+Users can book local home gyms in their area and hosts can list their home gym.
 
-This repo is the front-end client, built in React. You can see the app live at [https://gymbnb-client.vercel.app](https://gymbnb-client.vercel.app)
+This repo is the front-end client, built in React. You can see the app live at: [https://gymbnb-client.vercel.app](https://gymbnb-client.vercel.app)
 
-To try out this app, you may create a new dummy account from the Sign Up page, or use the Demo Account listed below.
+To try out this app, you can create a new account from the Sign Up page or use the Demo Account listed below.
 
 #### Demo Account Details
 
@@ -21,21 +21,22 @@ During SF's required quarantine, my gym membership was paused without a forseeab
 - Edit the list of artists you want displayed on the music festival lineup poster
 - See final music festival lineup poster and concert videos of the artists
 
-## Demo
+## Video Demos
 
-- [Live Demo](https://marfriaz.github.io/couchella/)
+- [Gymbnb](https://www.youtube.com/watch?v=TUgLHtagTTQ&feature=youtu.be&ab_channel=MarcoFriaz)
+- [Gymbnb Login](https://www.youtube.com/watch?v=vccD64fxJ2M&feature=youtu.be&ab_channel=MarcoFriaz)
 
 #### Front End
 
 - React
-  - [Create React App](https://github.com/facebook/create-react-app).
+  - [Create React App](https://github.com/facebook/create-react-app)
   - React Router
 - HTML5
 - CSS3 (scratch - no frameworks)
 
 #### Testing
 
-- Jest (screen captures & smoke tests)
+- Jest (smoke tests)
 
 #### Production
 
