@@ -27,7 +27,7 @@ During SF's required quarantine, my gym membership was paused without a forseeab
 
 ## Video Demos
 
-![Imgur](https://i.imgur.com/5RdqjfJ.gif)
+![Imgur](https://i.imgur.com/s6yCiI7.mp4)
 
 - [Gymbnb (Youtube Vid Demo)](https://www.youtube.com/watch?v=TUgLHtagTTQ&feature=youtu.be&ab_channel=MarcoFriaz)
 
