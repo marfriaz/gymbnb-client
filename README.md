@@ -33,6 +33,7 @@ To try out this app, you can create a new account from the Sign Up page or use t
 
 ## Features
 
+- Responsive design
 - Search gyms by location
 - "Email Host" malito link connected to host's email
 - "Host a Gym" form for listing home gyms onto the platform
@@ -44,6 +45,8 @@ To try out this app, you can create a new account from the Sign Up page or use t
 During SF's covid stay at home mandate, my gym was shutdown without a forseeable date of re-opening. Working out is an important ordeal for me, it enhances my mood and keeps me grounded, so I decided to build my own home gym (featured on this Web App). The gym equipment was pricey and I'm the only one using it! My friends would occasionally ask to use my home gym as they didn't own their own equipment. Hence, I created Gymbnb: a local home gym marketplace.
 
 ## Video Demos
+
+#### Video Demos in mobile screen but this App supports a responsive design
 
 [![Watch the video](https://i.imgur.com/NvdEQju.png)](https://www.youtube.com/watch?v=TUgLHtagTTQ&feature=youtu.be&ab_channel=MarcoFriaz)
 
