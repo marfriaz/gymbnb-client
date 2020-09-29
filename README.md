@@ -18,12 +18,12 @@ To try out this app, you can create a new account from the Sign Up page or use t
 
 #### Demo Account Details
 
-- email: user@gmail.com
-- password: password
+- Email: user@gmail.com
+- Password: password
 
 ## Motivation
 
-During SF's required quarantine, my gym membership was paused without a forseeable date of when the gym would re-open. Working out is an important ordeal for me, it enhances my mood and keeps me grounded, so I decided to build my own home gym (featured on this Web App). The gym equipment was pricey and I'm the only one using it! My friends would occasionally ask to use my home gym as they didn't own their own equipment. Hence, I created Gymbnb: a local home gym reservation web app.
+During SF's covid stay at home mandate, my gym was shutdown without a forseeable date of re-opening. Working out is an important ordeal for me, it enhances my mood and keeps me grounded, so I decided to build my own home gym (featured on this Web App). The gym equipment was pricey and I'm the only one using it! My friends would occasionally ask to use my home gym as they didn't own their own equipment. Hence, I created Gymbnb: a local home gym marketplace.
 
 ## Video Demos
 
