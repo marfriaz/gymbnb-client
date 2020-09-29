@@ -1,10 +1,20 @@
 # Gymbnb
 
+## Introduction
+
 Users can book local home gyms in their area and hosts can list their home gym.
 
 This repo is the front-end client, built in React. You can see the app live at: [https://gymbnb-client.vercel.app](https://gymbnb-client.vercel.app)
 
 To try out this app, you can create a new account from the Sign Up page or use the Demo Account listed below.
+
+## Features
+
+- Search gyms by location
+- "Email Host" malito link connected to host's email
+- "Host a Gym" form for listing home gyms onto the platform
+- "Sign Up" form
+- "Login" form
 
 #### Demo Account Details
 
@@ -15,16 +25,12 @@ To try out this app, you can create a new account from the Sign Up page or use t
 
 During SF's required quarantine, my gym membership was paused without a forseeable date of when the gym would re-open. Working out is an important ordeal for me, it enhances my mood and keeps me grounded, so I decided to build my own home gym (featured on this Web App). The gym equipment was pricey and I'm the only one using it! My friends would occasionally ask to use my home gym as they didn't own their own equipment. Hence, I created Gymbnb: a local home gym reservation web app.
 
-## Features
-
-- Attain your 12 most played artists on Spotify
-- Edit the list of artists you want displayed on the music festival lineup poster
-- See final music festival lineup poster and concert videos of the artists
-
 ## Video Demos
 
 - [Gymbnb](https://www.youtube.com/watch?v=TUgLHtagTTQ&feature=youtu.be&ab_channel=MarcoFriaz)
 - [Gymbnb Login](https://www.youtube.com/watch?v=vccD64fxJ2M&feature=youtu.be&ab_channel=MarcoFriaz)
+
+## Technology
 
 #### Front End
 
