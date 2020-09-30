@@ -22,7 +22,7 @@
 }
 
 .Header_login {
-  margin-right: 10px;
+  margin-right: 20px;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -38,14 +38,11 @@
   color: #616668;
 }
 
-.Header__not-logged-in {
+.Header__not-logged-in .Hyph {
   display: none;
 }
 
 @media screen and (min-width: 450px) {
-  .Header_login {
-    margin-right: 20px;
-  }
   .Header h1 {
     font-size: 22pt;
   }
@@ -54,7 +51,7 @@
     flex-direction: row;
   }
 
-  .Header__not-logged-in {
+  .Header__not-logged-in .Hyph {
     display: initial;
   }
 
@@ -73,7 +70,7 @@
     flex-direction: row;
   }
 
-  .Header__not-logged-in {
+  .Header__not-logged-in .Hyph {
     display: initial;
   }
 }
