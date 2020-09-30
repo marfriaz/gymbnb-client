@@ -60,7 +60,9 @@ export default class HostGymForm extends Component {
           <form className="HostGymForm" onSubmit={this.handleSubmit}>
             <div role="alert">{error && <p className="red">{error}</p>}</div>
             <div className="location">
-              <label htmlFor="HostGymForm__location">Location: </label>
+              <label htmlFor="HostGymForm__location">
+                Location: <Required />
+              </label>
               <select type="text" name="location" required placeholder="Search">
                 <option value="san-francisco">San Francisco</option>
                 <option value="sunnyvale">Sunnyvale</option>
@@ -135,7 +137,6 @@ export default class HostGymForm extends Component {
               ></Input>
             </div>
           </form>
-
           <div className="Current_Images_text">Uploaded images: </div>
           <div className="Current_Images">{img_decon}</div>
         </div>

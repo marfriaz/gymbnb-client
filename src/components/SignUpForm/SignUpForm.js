@@ -76,7 +76,9 @@ export default class SignUpForm extends Component {
             id="SignUpForm__password"
           ></Input>
         </div>
-        <Button type="submit">Sign Up</Button>
+        <Button className="Form-Button" type="submit">
+          Sign Up
+        </Button>
       </form>
     );
   }

@@ -29,7 +29,7 @@ export default class GymPage extends Component {
 
   renderGym() {
     const { gym } = this.context;
-    const email_href = `malito:${gym.user.email}?subject=Home Gym Inquiry`;
+    const email_href = `mailto:${gym.user.email}?subject=Home Gym Inquiry`;
 
     return (
       <>
