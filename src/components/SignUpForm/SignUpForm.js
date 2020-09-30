@@ -38,7 +38,7 @@ export default class SignUpForm extends Component {
       <form className="SignUpForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="first_name">
-          <label htmlFor="SignUpForm__first_name">
+          <label className="Form_Label" htmlFor="SignUpForm__first_name">
             First name <Required />
           </label>
           <Input
@@ -49,13 +49,13 @@ export default class SignUpForm extends Component {
           ></Input>
         </div>
         <div className="last_name">
-          <label htmlFor="SignUpForm__last_name">
+          <label className="Form_Label" htmlFor="SignUpForm__last_name">
             Last Name <Required />
           </label>
           <Input name="last_name" type="text" required id="SignUpForm"></Input>
         </div>
         <div className="email">
-          <label htmlFor="SignUpForm__email">
+          <label className="Form_Label" htmlFor="SignUpForm__email">
             Email <Required />
           </label>
           <Input
@@ -66,7 +66,7 @@ export default class SignUpForm extends Component {
           ></Input>
         </div>
         <div className="password">
-          <label htmlFor="SignUpForm__password">
+          <label className="Form_Label" htmlFor="SignUpForm__password">
             Password <Required />
           </label>
           <Input

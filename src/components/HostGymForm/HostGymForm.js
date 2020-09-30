@@ -60,8 +60,8 @@ export default class HostGymForm extends Component {
           <form className="HostGymForm" onSubmit={this.handleSubmit}>
             <div role="alert">{error && <p className="red">{error}</p>}</div>
             <div className="location">
-              <label htmlFor="HostGymForm__location">
-                Location: <Required />
+              <label className="Form_Label" htmlFor="HostGymForm__location">
+                Location:&nbsp;
               </label>
               <select type="text" name="location" required placeholder="Search">
                 <option value="san-francisco">San Francisco</option>
@@ -71,7 +71,7 @@ export default class HostGymForm extends Component {
               </select>
             </div>
             <div className="price">
-              <label htmlFor="HostGymForm__price">
+              <label className="Form_Label" htmlFor="HostGymForm__price">
                 Price <Required />
               </label>
               <Input
@@ -82,7 +82,7 @@ export default class HostGymForm extends Component {
               ></Input>
             </div>
             <div className="title">
-              <label htmlFor="HostGymForm__title">
+              <label className="Form_Label" htmlFor="HostGymForm__title">
                 Title <Required />
               </label>
               <Input
@@ -93,7 +93,7 @@ export default class HostGymForm extends Component {
               ></Input>
             </div>
             <div className="guests">
-              <label htmlFor="HostGymForm__guests">
+              <label className="Form_Label" htmlFor="HostGymForm__guests">
                 Guests <Required />
               </label>
               <Input
@@ -105,7 +105,7 @@ export default class HostGymForm extends Component {
             </div>
 
             <div className="description">
-              <label htmlFor="HostGymForm__description">
+              <label className="Form_Label" htmlFor="HostGymForm__description">
                 Description <Required />
               </label>
               <Input
