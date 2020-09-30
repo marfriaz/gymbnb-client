@@ -22,7 +22,7 @@
 }
 
 .Header_login {
-  margin-right: 20px;
+  margin-right: 10px;
   text-align: right;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,9 @@
 }
 
 @media screen and (min-width: 450px) {
+  .Header_login {
+    margin-right: 20px;
+  }
   .Header h1 {
     font-size: 22pt;
   }
