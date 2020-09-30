@@ -37,7 +37,7 @@ export default class SignUpForm extends Component {
     return (
       <form className="SignUpForm" onSubmit={this.handleSubmit}>
         <div role="alert">
-          {error && <p className="red">{error} Please Try Again</p>}
+          {error && <p className="red">{error} Please Try Again.</p>}
         </div>
         <div className="first_name">
           <label className="Form_Label" htmlFor="SignUpForm__first_name">
