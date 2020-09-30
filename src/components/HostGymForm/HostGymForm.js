@@ -56,6 +56,7 @@ export default class HostGymForm extends Component {
       <>
         <div className="HostGymPage_Section">
           <h2>List a Gym</h2>
+
           <form className="HostGymForm" onSubmit={this.handleSubmit}>
             <div role="alert">{error && <p className="red">{error}</p>}</div>
             <div className="location">
@@ -134,6 +135,7 @@ export default class HostGymForm extends Component {
               ></Input>
             </div>
           </form>
+
           <div className="Current_Images_text">Uploaded images: </div>
           <div className="Current_Images">{img_decon}</div>
         </div>

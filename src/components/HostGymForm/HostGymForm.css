@@ -55,9 +55,6 @@
   bottom: 40px;
 }
 
-.HostGymForm__photo {
-}
-
 @media (min-width: 650px) {
   .Current_Images_text {
     margin-top: 4%;
