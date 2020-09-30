@@ -5,7 +5,7 @@ import "./GymGridItem.css";
 
 export default class GymGridItem extends Component {
   render() {
-    const { gym } = this.props;
+    const { gym, key } = this.props;
     return (
       <div className="GymGridItem">
         <div className="GymGridItem_PhotoSlideshow">

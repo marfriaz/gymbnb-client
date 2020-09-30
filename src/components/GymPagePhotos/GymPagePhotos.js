@@ -31,8 +31,12 @@ export default class GymPagePhotos extends Component {
   render() {
     const { slideIndex, Slides } = this.state;
 
-    const slideShowDots = Slides.map((slide) => (
-      <span className="dot" onClick={() => this.plusSlides(1)}></span>
+    const slideShowDots = Slides.map((slide, index) => (
+      <span
+        className="dot"
+        key={index}
+        onClick={() => this.plusSlides(1)}
+      ></span>
     ));
 
     return (

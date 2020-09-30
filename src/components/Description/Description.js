@@ -45,8 +45,8 @@ export default class Description extends Component {
           "Guests are charged upfront through Gymbnb's secure payment system. Your payout is directly deposited after each booking, minus our 15% service fee.",
       },
     ];
-    const list = content.map((item) => (
-      <div className="Description_div">
+    const list = content.map((item, index) => (
+      <div className="Description_div" key={index}>
         {item.icon}
         <h2 className="Description_title">{item.title}</h2>
         <p>{item.description}</p>
