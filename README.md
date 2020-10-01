@@ -6,6 +6,8 @@ Gymbnb: a local home gym marketplace. Users can book local home gyms in their ar
 
 This repo is the front-end client, built in React. You can see the Live Demo at: [https://gymbnb-client.vercel.app](https://gymbnb-client.vercel.app)
 
+The API can be found at [https://github.com/marfriaz/gymbnb-server](https://github.com/marfriaz/gymbnb-server)
+
 To try out this app, you can create a new account from the Sign Up page or use the Demo Account listed below.
 
 #### Demo Account Details
