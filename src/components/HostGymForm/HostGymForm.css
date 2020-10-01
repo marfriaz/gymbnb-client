@@ -45,7 +45,7 @@
 
 .list_gym_button {
   position: relative;
-  top: 100px;
+  top: 120px;
 }
 
 .HostGymForm_Image_form {
@@ -56,6 +56,10 @@
 @media (min-width: 650px) {
   .Current_Images_text {
     margin-top: 4%;
+  }
+  .list_gym_button {
+    position: relative;
+    top: 100px;
   }
 }
 

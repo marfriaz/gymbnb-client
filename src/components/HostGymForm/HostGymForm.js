@@ -17,7 +17,8 @@ export default class HostGymForm extends Component {
 
   updateState = (ev) => {
     ev.preventDefault();
-    var joined = this.state.img_urls.concat(ev.target.img_urls.value);
+    let addedImage = ev.target.img_urls.value.replace(",", "");
+    let joined = this.state.img_urls.concat(addedImage);
     this.setState({ img_urls: joined });
     ev.target.img_urls.value = "";
   };
