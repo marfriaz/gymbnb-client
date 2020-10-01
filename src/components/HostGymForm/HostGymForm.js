@@ -108,12 +108,13 @@ export default class HostGymForm extends Component {
               <label className="Form_Label" htmlFor="HostGymForm__description">
                 Description <Required />
               </label>
-              <Input
-                name="description"
-                type="text"
-                required
+              <textarea
                 id="HostGymForm__description"
-              ></Input>
+                name="description"
+                required
+                rows="4"
+                cols="40"
+              ></textarea>
             </div>
             <div className="parent">
               <Button type="submit" className="button list_gym_button">
@@ -129,12 +130,16 @@ export default class HostGymForm extends Component {
                 </Button>{" "}
                 <Required />
               </label>
-              <Input
+              <textarea
                 name="img_urls"
                 type="text"
                 required
                 id="HostGymForm__img_urls"
-              ></Input>
+                rows="4"
+                cols="40"
+              >
+                Please ensure you have a valid Image Address URL.
+              </textarea>
             </div>
           </form>
           <div className="Current_Images_text">Uploaded images: </div>
