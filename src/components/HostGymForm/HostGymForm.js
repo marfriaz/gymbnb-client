@@ -44,12 +44,24 @@ export default class HostGymForm extends Component {
       });
   };
 
+  handleDelete = (index) => {
+    const { img_urls } = this.state;
+    img_urls.splice(index, 1);
+    this.setState({ img_urls: img_urls });
+  };
+
   render() {
     const { error, img_urls } = this.state;
 
-    const img_decon = img_urls.map((item) => (
-      <div className="HostGymForm__photo_container">
+    const img_decon = img_urls.map((item, index) => (
+      <div key={index} className="HostGymForm__photo_container">
         <img className="HostGymForm__photo" src={item} alt="Home Gym Listing" />
+        <button
+          className="Img__delete button"
+          onClick={() => this.handleDelete(index)}
+        >
+          Delete
+        </button>
       </div>
     ));
 
