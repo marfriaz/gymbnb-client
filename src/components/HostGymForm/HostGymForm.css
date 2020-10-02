@@ -3,7 +3,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
-. .HostGymPage_Section {
+.HostGymPage_Section {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -51,6 +51,10 @@
   position: relative;
   bottom: 40px;
 }
+.HostGymForm__photo {
+  width: 100%;
+  height: 150px;
+}
 
 @media (min-width: 650px) {
   .Current_Images_text {
@@ -62,8 +66,23 @@
   }
 }
 
+@media (min-width: 650px) {
+  .HostGymForm__photo {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .HostGymForm__photo {
+    width: 100%;
+    height: 250px;
+  }
+}
+
 @media (min-width: 1500px) {
-  .Current_Images_text {
-    margin-top: 2%;
+  .HostGymForm__photo {
+    width: 100%;
+    height: 250px;
   }
 }
