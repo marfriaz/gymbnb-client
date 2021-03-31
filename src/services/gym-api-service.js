@@ -26,21 +26,14 @@ const GymApiService = {
     );
   },
 
-  postGym({ title, description, max_guest, location, price, img_urls }) {
+  // postGym({ title, description, max_guest, location, price, img_urls }) {
+  postGym({ formData }) {
     return fetch(`${config.API_ENDPOINT}/gyms`, {
       method: "POST",
       headers: {
-        "content-type": "application/json",
         authorization: `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        title,
-        description,
-        max_guest,
-        location,
-        price,
-        img_urls,
-      }),
+      body: formData,
     }).then((res) =>
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import GymApiService from "../../services/gym-api-service";
 import { Input, Required, Button } from "../Utils/Utils";
 import "./HostGymForm.css";
+var FormData = require("form-data");
 
 export default class HostGymForm extends Component {
   state = {
@@ -15,25 +16,21 @@ export default class HostGymForm extends Component {
     },
   };
 
-  updateState = (ev) => {
-    ev.preventDefault();
-    let addedImage = ev.target.img_urls.value.replace(",", "");
-    let joined = this.state.img_urls.concat(addedImage);
-    this.setState({ img_urls: joined });
-    ev.target.img_urls.value = "";
-  };
-
   handleSubmit = (ev) => {
     ev.preventDefault();
     const { img_urls } = this.state;
+
+    const formData = new FormData();
+    Array.from(img_urls).forEach((file) => formData.append("image", file));
+    formData.append("location", ev.target.location.value);
+    formData.append("price", ev.target.price.value);
+    formData.append("title", `${ev.target.title.value}`);
+    formData.append("max_guest", ev.target.max_guest.value);
+    formData.append("description", ev.target.description.value);
     this.setState({ error: null });
+
     GymApiService.postGym({
-      location: ev.target.location.value,
-      price: ev.target.price.value,
-      title: ev.target.title.value,
-      max_guest: ev.target.max_guest.value,
-      description: ev.target.description.value,
-      img_urls: `{${img_urls}}`,
+      formData: formData,
     })
 
       .then((data) => {
@@ -50,18 +47,28 @@ export default class HostGymForm extends Component {
     this.setState({ img_urls: img_urls });
   };
 
+  fileOnChange = (ev) => {
+    const { img_urls } = this.state;
+
+    this.setState({ img_urls: ev.target.files });
+  };
+
   render() {
     const { error, img_urls } = this.state;
 
-    const img_decon = img_urls.map((item, index) => (
+    const img_decon = Array.from(img_urls).map((item, index) => (
       <div key={index} className="HostGymForm__photo_container">
-        <img className="HostGymForm__photo" src={item} alt="Home Gym Listing" />
-        <button
+        <img
+          className="HostGymForm__photo"
+          src={URL.createObjectURL(item)}
+          alt="Home Gym Listing"
+        />
+        {/* <button
           className="Img__delete button"
           onClick={() => this.handleDelete(index)}
         >
           Delete
-        </button>
+        </button> */}
       </div>
     ));
 
@@ -137,22 +144,15 @@ export default class HostGymForm extends Component {
           </form>
           <form className="HostGymForm_Image_form" onSubmit={this.updateState}>
             <div className="img_urls">
-              <label htmlFor="HostGymForm__img_urls">
-                <Button type="submit" className="img-button">
-                  Add Image Address URL
-                </Button>{" "}
-                <Required />
-              </label>
-              <textarea
-                name="img_urls"
-                type="text"
+              <label htmlFor="HostGymForm__img_urls">Add Images: </label>
+              <Input
+                name="price"
+                type="file"
                 required
                 id="HostGymForm__img_urls"
-                rows="4"
-                cols="40"
-              >
-                Please ensure you have a valid Image Address URL.
-              </textarea>
+                onChange={this.fileOnChange}
+                multiple
+              ></Input>
             </div>
           </form>
           <div className="Current_Images_text">Uploaded images: </div>
